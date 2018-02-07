@@ -11,14 +11,12 @@ html, body, #App, #MobileApp {
   overflow: hidden;
   background:$app-bg;
   transition:background 1000ms ease-out;
+  box-sizing:border-box; // border-box is much easier to style around - no need to declare in every element
+  div, span, img, a { box-sizing:inherit }
+
   &#App { flex-direction:row }
   &#MobileApp { flex-direction:column }
-  #Sidebar {
-    width:10rem;
-    background:$sidebar-bg;
-    border-right:1px solid rgba(0,0,0,.5);
-  }
-  #Canvas {
-    flex:1;
-  }
+
+  @import 'Sidebar/_';
+  @import 'Canvas/_';
 }

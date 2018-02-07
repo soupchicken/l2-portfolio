@@ -60,7 +60,19 @@ module.exports = [{
 	externals:[nodeExternals()],
 	module: {
 		rules: [
-
+			{
+				test: /\.png$/,
+				loader: "url-loader?mimetype=image/png"
+			},
+			{
+				test: /\.svg?$/,
+				loader: 'svg-sprite!svgo',
+				include: path.resolve('./images')
+			},
+			{
+				test: /\.gif$/,
+				loader: "url-loader?mimetype=image/gif"
+			},
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',

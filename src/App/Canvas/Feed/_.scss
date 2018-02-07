@@ -1,0 +1,55 @@
+#Feed {
+  position:relative;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  &:after {
+    content:'';
+    position:absolute;
+    top:0;
+    left:4.375rem;
+    width:1px;
+    height:100%;
+    background:rgba(0,0,0,.1);
+  }
+  .header {
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    height:3.25rem;
+    padding-left:4.375rem;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    .logo {
+      position:absolute;
+      top:.625rem;
+      left:1.3125rem;
+      height:1.875rem;
+    }
+    .tags-window {
+      position:relative;
+      flex:1;
+      overflow:hidden;
+      .tags-wrap {
+        position:absolute;
+        left:0;
+        top:0;
+        width:100rem;
+        height:100%;
+        padding:0 .5625rem;
+        .tag {
+          float:left;
+          padding: 0 .4375rem;
+          font-family:'Abel', sans-serif;
+          font-size:1.125rem;
+          line-height:3.25rem;
+          opacity:.5;
+          cursor:pointer;
+          transition: opacity 150ms ease-out;
+          &:hover {
+            opacity:1;
+          }
+        }
+      }
+    }
+  }
+}

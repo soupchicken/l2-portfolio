@@ -8,5 +8,8 @@ export default (() => {
 	_router.get('/build/:filename', ( req, res) => {
     res.sendFile( path.resolve('build', req.params.filename ))
   });
+	_router.get('/images/:filename', ( req, res) => {
+		res.sendFile( path.resolve('images', req.params.filename ))
+	});
   return _router;
 })

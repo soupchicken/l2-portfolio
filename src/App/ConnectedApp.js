@@ -5,7 +5,7 @@ import App from './App'
 
 const mapStateToProps = function( state, ownProps ){
   return {
-    state
+    NODE_ENV: state.environment.NODE_ENV
   }
 }
 

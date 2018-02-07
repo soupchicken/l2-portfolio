@@ -23,6 +23,19 @@ module.exports = {
         include: srcPath,
         loader: 'eslint-loader'
       },
+			{
+				test: /\.png$/,
+				loader: "url-loader?mimetype=image/png"
+			},
+			{
+				test: /\.svg?$/,
+				loader: 'svg-sprite!svgo',
+				include: path.resolve('./images')
+			},
+			{
+				test: /\.gif$/,
+				loader: "url-loader?mimetype=image/gif"
+			},
       {
         test: /\.css$/,
         loader: ['style-loader','css-loader']

@@ -26,7 +26,7 @@ var http = require('http');
 
 import React from 'react';
 import configureStore from './src/config/store'
-import { StaticRouter } from 'react-router-dom';
+import { StaticRouter, Route } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
@@ -40,22 +40,29 @@ app.use( router() );
 
 app.use( handleRequest );
 
+
 function handleRequest( req, res ){
   const context = {};
   const initialState = { environment:{ NODE_ENV }};
   const store = configureStore( initialState );
-  const html = renderToString(
+	const html = renderToString(
     React.createElement( Provider, { store }, // Redux Wrapper
       React.createElement( StaticRouter, { location:req.url, context }, // React Router ServerSide wrap
 				NODE_ENV === 'production' ?
-					React.createElement( App ) :
+					React.createElement( Route, { path:'/', component:App }) :
 					React.createElement( AppContainer, null, // Hot loader wrap
-						React.createElement( App )
+						React.createElement( Route, { path:'/', component:App })
 					)
       )
     )
   )
-  res.status(200).send(renderFullPage( html, store.getState() ));
+	console.log(context, "IS THIS RIGHT??");
+	if ( context.redirectUrl){
+		res.redirect( 302, '/' );
+	} else {
+		res.status(200).send(renderFullPage( html, store.getState() ));
+	}
+
 }
 
 
@@ -74,6 +81,7 @@ function renderFullPage(html, initialState ) {
         <meta name="description" content="L2 Boilerplate"/>
         <link rel="icon" type="img/ico" href="build/favicon.ico"/>
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         ${ stylesheet }
       </head>
       <body>

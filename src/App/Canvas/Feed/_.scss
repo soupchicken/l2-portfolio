@@ -24,6 +24,12 @@
       top:.625rem;
       left:1.3125rem;
       height:1.875rem;
+      transition: opacity 150ms ease-out;
+      &[data-filtered="true"]{
+        opacity:.5;
+        cursor:pointer;
+        &:hover { opacity:1 }
+      }
     }
     .tags-window {
       position:relative;
@@ -42,14 +48,25 @@
           font-family:'Abel', sans-serif;
           font-size:1.125rem;
           line-height:3.25rem;
-          opacity:.5;
+          opacity:.4;
           cursor:pointer;
           transition: opacity 150ms ease-out;
+          &[data-active="true"]{
+            opacity:.85;
+            &:hover { opacity:1 }
+          }
           &:hover {
-            opacity:1;
+            opacity:.7;
           }
         }
       }
     }
   }
+
+  .projects {
+    flex:1;
+    overflow:auto;
+    @import 'Project/_';
+  }
+
 }

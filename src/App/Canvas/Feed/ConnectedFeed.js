@@ -1,22 +1,21 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import App from './App'
+import Feed from './Feed'
 
 const mapStateToProps = function( state, ownProps ){
-  console.log(state);
+	console.log(state);
 	return {
-    NODE_ENV: state.environment.NODE_ENV,
 		projects: state.data.projects
-  }
+	}
 }
 
 const mapDispatchToProps = function( dispatch ){
-  return {}
+	return {}
 }
 
 export default
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )( App )
+connect(
+	mapStateToProps,
+	mapDispatchToProps
+)( Feed )

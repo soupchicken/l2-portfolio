@@ -1,0 +1,40 @@
+.project {
+  display:flex;
+  flex-direction:column;
+  float:left;
+  width:100%;
+  padding: .875rem .5625rem .875rem 5.3875rem;
+  border-top:1px solid rgba(0,0,0,.2);
+  &:first-of-type { border-top:none }
+  .title {
+    line-height:2.5625rem;
+    font-size:1.6875rem;
+    font-weight:600;
+  }
+  .page-selectors {
+    line-height:2.125rem;
+    .page-selector {
+      float:left;
+      margin: 0 .25rem;
+      padding: 0 .6875rem;
+      background:rgba(0,0,0,.2);
+      border-radius:3px;
+      opacity:.5;
+      cursor:pointer;
+      transition: opacity 150ms ease-out;
+      &:hover { opacity:.8 }
+      &:first-of-type { margin-left: 0 }
+      &[data-active="true"]{
+        opacity:1;
+        cursor:default;
+      }
+    }
+  }
+  .pages {
+    position:relative;
+    float:left;
+    height:20rem;
+    @import 'Page/_';
+  }
+
+}

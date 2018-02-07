@@ -56,7 +56,8 @@ function handleRequest( req, res ){
       )
     )
   )
-	console.log(context, "IS THIS RIGHT??");
+
+	console.log(store.getState().data, 'the stateee');
 	if ( context.redirectUrl){
 		res.redirect( 302, '/' );
 	} else {
@@ -76,7 +77,7 @@ function renderFullPage(html, initialState ) {
     <!doctype html>
     <html lang="en" xml:lang="en">
       <head>
-        <title>L2 Boilerplate</title>
+        <title>L2 Productions</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="L2 Boilerplate"/>
         <link rel="icon" type="img/ico" href="build/favicon.ico"/>

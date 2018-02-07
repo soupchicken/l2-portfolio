@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 
-import Feed from './Feed/Feed'
+import Feed from './Feed/ConnectedFeed'
 
 const Canvas = React.createClass({
 

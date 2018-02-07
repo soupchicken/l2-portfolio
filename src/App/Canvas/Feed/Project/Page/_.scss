@@ -1,0 +1,68 @@
+.page {
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  height:20rem;
+  width:30rem;
+  opacity:0;
+  pointer-events:none;
+  transition:all 150ms ease-out;
+  &[data-position="0"]{
+    left:0;
+    padding: .375rem;
+    opacity:1;
+    z-index:5;
+    .description { opacity:1; transition: opacity 150ms 150ms ease-out; }
+  }
+  &[data-position="1"]{
+    margin-left:4.375rem;
+    padding: 1rem;
+    opacity:.8;
+    z-index:4;
+  }
+  &[data-position="2"]{
+    margin-left:8rem;
+    padding: 1.625rem;
+    opacity:.65;
+    z-index:3;
+  }
+  &[data-position="3"]{
+    margin-left:11.625rem;
+    padding: 2.4375rem;
+    opacity:.5;
+    z-index:2;
+  }
+  &[data-position="4"]{
+    margin-left:14.5rem;
+    padding: 2.875rem;
+    opacity:.25;
+    z-index:2;
+  }
+  &[data-position="-1"],
+  &[data-position="-2"],
+  &[data-position="-3"]{
+    opacity:0;
+  }
+  .description {
+    position:absolute;
+    left:0;
+    width:100rem;
+    padding: .75rem 0;
+    opacity:0;
+    transition: opacity 0ms ease-out;
+  }
+  .image {
+    position:relative;
+    flex:1;
+    pointer-events:all;
+    img {
+      position:absolute;
+      top:0;
+      left:0;
+      height:100%;
+      max-width:100%;
+      //background-color:black;
+      box-shadow:1px 1px 1px black;
+    }
+  }
+}

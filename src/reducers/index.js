@@ -1,5 +1,7 @@
 import environment from './_environment'
+import data from './_data'
 export default {
-	environment
+	environment,
+	data
 	// More reducers go here...
 };

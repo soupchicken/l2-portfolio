@@ -45,6 +45,7 @@ const App = React.createClass({
     const { isMobile } = this.state;
 		const { staticContext } = this.props;
 
+
 		// Determine if routes are valid, pass error information to server via staticContext object
     if ( staticContext ) this.assignStaticContext()
 

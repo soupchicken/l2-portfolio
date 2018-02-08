@@ -1,24 +1,98 @@
 #Sidebar {
+  display:flex;
+  flex-direction:column;
   position:relative;
-  width:27rem;
+  width:25rem;
+  min-width:25rem;
   background:$sidebar-bg;
   border-right:1px solid rgba(0,0,0,.5);
-  .portrait {
-    position:absolute;
-    top:2rem;
-    left:2rem;
-    border:1px solid rgba(0,0,0,.5);
-    border-radius:100px;
-    width:6rem;
-    height:6rem;
-    box-shadow:1px 1px 1px black;
-  }
-  .name {
-    position:absolute;
-    top:2rem;
-    left:9.25rem;
 
-    font-size:2.25rem;
-    font-weight:700;
+  text-shadow: 1px 1px 1px black;
+  .header {
+    position:relative;
+    height:10rem;
+    border-bottom:1px solid rgba(0,0,0,.2);
+    .portrait {
+      position:absolute;
+      top:1.625rem;
+      left:1.375rem;
+      border:1px solid rgba(0,0,0,.5);
+      border-radius:100px;
+      width:6.25rem;
+      height:6.25rem;
+      box-shadow:1px 1px 1px black;
+    }
+    .name {
+      position:absolute;
+      top:1.25rem;
+      left:8.5rem;
+      font-family:'Asap', sans-serif;
+      font-size:2.5rem;
+      font-weight:800;
+    }
+    .description {
+      position:absolute;
+      top:4.3125rem;
+      left:8.5625rem;
+      padding-right:1.75rem;
+      font-size:.9375rem;
+    }
+  }
+  .university {
+    position:relative;
+    height:5.25rem;
+    padding-left:5.125rem;
+    border-bottom:1px solid rgba(0,0,0,.2);
+    .logo {
+      position:absolute;
+      top:1.0625rem;
+      left:1.625rem;
+      width:2.625rem
+    }
+    .name {
+      float:left;
+      margin-top:1rem;
+      font-size:1.625rem;
+      font-weight:600;
+    }
+    .focus {
+      float:left;
+      margin-left:.0625rem;
+      font-size:.9375rem;
+      line-height:1.3125rem;
+    }
+  }
+  .contact {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding-top:.75rem;
+    padding-left:1.3875rem;
+    .section-header {
+      line-height:2.25rem;
+      font-size:1.5rem;
+      font-weight:700;
+    }
+    a {
+      position:relative;
+      padding-left:2.3125rem;
+      line-height:2.125rem;
+      font-size:1.125rem;
+      color:white;
+      text-decoration:none;
+      cursor:pointer;
+      opacity:.8;
+      transition: opacity 150ms ease-out;
+      &:hover {
+        opacity:1;
+      }
+
+      &:before {
+        position:absolute;
+        top:.3875rem;
+        left:0;
+        font-size:1.75rem;
+      }
+    }
   }
 }

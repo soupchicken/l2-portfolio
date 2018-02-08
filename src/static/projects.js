@@ -44,12 +44,12 @@ export default [
 		pages:[
 			{
 				title:'Overview',
-				image:'/images/intergalactic.jpg',
+				image:'/images/twi-sfv.png',
 				description:'THIS IS A DESCRIPTION OF A PAGE'
 			},
 			{
 				title:'This is great',
-				image:'/images/intergalactic.jpg',
+				image:'/images/twi-csgo.png',
 				description:'THIS IS A DESCRIPTION OF A PAGE'
 			},
 			{

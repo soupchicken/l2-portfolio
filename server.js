@@ -81,6 +81,7 @@ function renderFullPage(html, initialState ) {
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="L2 Boilerplate"/>
         <link rel="icon" type="img/ico" href="build/favicon.ico"/>
+        <link href="https://file.myfontastic.com/S5Djnt87giP8msQyxwAYVP/icons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         ${ stylesheet }

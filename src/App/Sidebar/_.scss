@@ -2,57 +2,61 @@
   display:flex;
   flex-direction:column;
   position:relative;
-  width:25rem;
-  min-width:25rem;
+  width:14rem;
+  min-width:14rem;
   background:$sidebar-bg;
-  border-right:1px solid rgba(0,0,0,.5);
+  border-right:1px solid rgba(0,0,0,.6);
+  padding:0 .75rem;
 
   text-shadow: 1px 1px 1px black;
   .header {
     position:relative;
-    height:10rem;
+    height:14.3125rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .portrait {
       position:absolute;
-      top:1.625rem;
-      left:1.375rem;
+      top:.75rem;
+      left:2.4375rem;
       border:1px solid rgba(0,0,0,.5);
       border-radius:100px;
-      width:6.25rem;
-      height:6.25rem;
-      box-shadow:1px 1px 1px black;
+      width:7.25rem;
+      height:7.25rem;
+      box-shadow:1px 1px 1px rgba(0,0,0,.5);
     }
     .name {
       position:absolute;
-      top:1.25rem;
-      left:8.5rem;
-      font-family:'Asap', sans-serif;
-      font-size:2.5rem;
+      top:8.25rem;
+      left:0;
+      width:100%;
+      text-align:center;
+      font-size:2rem;
       font-weight:800;
     }
     .description {
       position:absolute;
-      top:4.3125rem;
-      left:8.5625rem;
-      padding-right:1.75rem;
-      font-size:.9375rem;
+      top:10.75rem;
+      left:0;
+      width:100%;
+      //padding: 0 1rem;
+      text-align:center;
+      font-size:.875rem;
     }
   }
   .university {
     position:relative;
     height:5.25rem;
-    padding-left:5.125rem;
+    padding-left:4.375rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .logo {
       position:absolute;
-      top:1.0625rem;
-      left:1.625rem;
-      width:2.625rem
+      top:0.625rem;
+      left:1.375rem;
+      width:2.375rem
     }
     .name {
       float:left;
-      margin-top:1rem;
-      font-size:1.625rem;
+      margin-top:.5rem;
+      font-size:1.3125rem;
       font-weight:600;
     }
     .focus {

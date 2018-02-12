@@ -21,14 +21,13 @@ const Sidebar = React.createClass({
 						Lucas Lemos
 					</div>
 					<div className="description">
-						EIC http://DailyWire.com , syndicated columnist, host of
-						"The Ben Shapiro Show," National Review, NYT bestseller
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.
 					</div>
 				</div>
 				<div className="university">
 					<img className="logo" src="/images/wharton.svg"/>
 					<div className="name">Wharton '11</div>
-					<div className="focus">Finance  .  Math  .  Computer Science</div>
+					<div className="focus">Finance  .  Math</div>
 				</div>
 				<div className="contact">
 					<a href="#" className="icon-twitter">_soupkal</a>

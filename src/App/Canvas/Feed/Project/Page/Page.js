@@ -9,19 +9,19 @@ const Page = React.createClass({
 	},
 
 	render() {
-		const { page, position } = this.props;
+		const { page, onClick, position, isActive, relativePosition } = this.props;
 
 		return (
 			<div
 				className="page"
-				style={{ width:page.imageWidth }}
-				data-position={ position }>
-				<div className="description">
-					<p>{ page.description }</p>
-				</div>
-				<div className="image">
+				onClick={ onClick }
+				data-position={ position }
+				data-relative-position={ relativePosition }
+				data-is-active={isActive}>
 					<img src={ page.image }/>
-				</div>
+					<div className="label">
+						{ page.title }
+					</div>
 			</div>
 		);
 

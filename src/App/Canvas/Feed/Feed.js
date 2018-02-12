@@ -7,7 +7,8 @@ const Feed = React.createClass({
 
 	getInitialState(){
 		return {
-			activeFilter:null
+			activeFilter:null,
+			activeProject: null
 		}
 	},
 
@@ -25,10 +26,10 @@ const Feed = React.createClass({
 		const { projects } = this.props;
 
 		const projectComponents = [];
-		_.each( projects, project => {
+		_.each( projects, ( project, i ) => {
 			projectComponents.push(
 				<Project
-					key={ project.title }
+					key={ `${project.title}-${i}` }
 					project={ project }
 				/>
 			)
@@ -75,7 +76,7 @@ const Feed = React.createClass({
 						</div>
 					</div>
 				</div>
-				<div className="projects">
+				<div id="Projects">
 					{ projectComponents }
 				</div>
 			</div>

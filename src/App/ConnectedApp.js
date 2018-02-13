@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import App from './App'
 
 const mapStateToProps = function( state, ownProps ){
-  console.log(state);
 	return {
     NODE_ENV: state.environment.NODE_ENV,
 		projects: state.data.projects

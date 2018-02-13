@@ -13,7 +13,7 @@ const Canvas = React.createClass({
 	render() {
 		return (
 			<div id="Canvas">
-				<Feed />
+				<Route path="/" component={ Feed }/>
 			</div>
 		);
 

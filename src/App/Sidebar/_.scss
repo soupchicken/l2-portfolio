@@ -11,7 +11,7 @@
   text-shadow: 1px 1px 1px black;
   .header {
     position:relative;
-    height:14.3125rem;
+    height:14.6875rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .portrait {
       position:absolute;
@@ -29,22 +29,23 @@
       left:0;
       width:100%;
       text-align:center;
-      font-size:2rem;
+      font-size:1.9375rem;
       font-weight:800;
     }
     .description {
       position:absolute;
-      top:10.75rem;
+      top:10.5625rem;
       left:0;
       width:100%;
       //padding: 0 1rem;
       text-align:center;
+      line-height:1.125rem;
       font-size:.875rem;
     }
   }
   .university {
     position:relative;
-    height:5.25rem;
+    height:4.125rem;
     padding-left:4.375rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .logo {

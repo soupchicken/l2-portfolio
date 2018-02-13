@@ -2,28 +2,26 @@ import React from 'react'
 import _ from 'lodash';
 import { Route } from 'react-router-dom';
 import Project from './Project/Project'
+import PropTypes from 'prop-types';
 
 const Feed = React.createClass({
 
-	getInitialState(){
-		return {
-			activeFilter:null,
-			activeProject: null
-		}
-	},
-
 	clearFilter(){
-		this.setState({ activeFilter: null })
+		const { history } = this.context;
+		history.push({ pathname:history.location.pathname });
 	},
 
 	activateFilter( newFilter ){
-		this.setState({ activeFilter:newFilter })
+		const { utils:{ stringifyQuery }, history } = this.context;
+		history.push({ pathname:history.location.pathname, search:stringifyQuery({ filter:newFilter }) })
 	},
 
 	render() {
 
-		const { activeFilter } = this.state;
 		const { projects } = this.props;
+
+		const { utils:{ parseSearchString }, history } = this.context;
+		const query = parseSearchString( history.location.search );
 
 		const projectComponents = [];
 		_.each( projects, ( project, i ) => {
@@ -31,6 +29,7 @@ const Feed = React.createClass({
 				<Project
 					key={ `${project.title}-${i}` }
 					project={ project }
+					isLastProject={ i + 1 === projects.length }
 				/>
 			)
 		})
@@ -38,37 +37,37 @@ const Feed = React.createClass({
 		return (
 			<div id="Feed">
 				<div className="header">
-					<img
-						className="logo"
-						data-filtered={ !!activeFilter }
-						onClick={ this.clearFilter }
-						src="/images/logo.svg"
-					/>
 					<div className="tags-window">
 						<div className="tags-wrap">
 							<div
 								className="tag"
-								data-active={ activeFilter === 'graphic-design' }
+								data-active={ !query.filter }
+								onClick={ this.clearFilter }>
+								All Projects
+							</div>
+							<div
+								className="tag"
+								data-active={ query.filter && query.filter === 'design' }
 								onClick={() => {
-									activeFilter !== 'graphic-design' ?
-										this.activateFilter('graphic-design') : this.clearFilter()
+									query.filter || query.filter !== 'design' ?
+										this.activateFilter('design') : this.clearFilter()
 								}}>
 								Graphic Design
 							</div>
 							<div
 								className="tag"
-								data-active={ activeFilter === 'react' }
+								data-active={ query.filter && query.filter === 'react' }
 								onClick={() => {
-									activeFilter !== 'react' ?
+									query.filter || query.filter !== 'react' ?
 										this.activateFilter('react') : this.clearFilter()
 								}}>
 								React
 							</div>
 							<div
 								className="tag"
-								data-active={ activeFilter === 'logos' }
+								data-active={ query.filter && query.filter === 'logos' }
 								onClick={() => {
-									activeFilter !== 'logos' ?
+									query.filter || query.filter !== 'logos' ?
 										this.activateFilter('logos') : this.clearFilter()
 								}}>
 								Logos
@@ -81,8 +80,12 @@ const Feed = React.createClass({
 				</div>
 			</div>
 		);
-
 	}
 });
+
+Feed.contextTypes = {
+	utils: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired
+};
 
 export default Feed

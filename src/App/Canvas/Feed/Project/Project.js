@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 let Velocity = {};
-if ( typeof window !== 'undefined' ) {
+if ( typeof window !== 'undefined' )
 	Velocity = require('velocity-animate')
-}
 
 import Page from './Page/Page'
 
@@ -18,32 +18,65 @@ const Project = React.createClass({
 		}
 	},
 
-	componentDidUpdate( prevProps, prevState ){
-		if ( this.state.activePageIndex !== prevState.activePageIndex )
-			this.scrollToPage( this.state.activePageIndex, !_.isNull(prevState.activePageIndex) )
+	componentDidMount(){
+		setTimeout(() => {
+			const { project } = this.props;
+			const { utils:{ parseSearchString }, history } = this.context;
+			const query = parseSearchString( history.location.search );
+			const prevQuery = parseSearchString( history.location.state ? history.location.state.prevQuery : '' );
+
+			if( parseInt(query.project) === project.id ){
+				this.focusOnProject( 0 );
+				this.scrollToPage( parseInt(query.page), 0 )
+			}
+
+		}, 0)
 	},
 
-	scrollToPage( targetPage, animate ){
+	componentDidUpdate(){
+		const { project } = this.props;
+		const { utils:{ parseSearchString }, history } = this.context;
+		const query = parseSearchString( history.location.search );
+		const prevQuery = parseSearchString( history.location.state ? history.location.state.prevQuery : '' );
+
+		if( parseInt(query.project) === project.id )
+			this.focusOnProject( 200 );
+
+		if ( query.project !== prevQuery.project && query.page ) {
+			this.scrollToPage(parseInt(query.page), 0)
+		} else if ( parseInt(query.project) === project.id && ( query.page !== prevQuery.page )) {
+			this.scrollToPage(parseInt(query.page), 200)
+		}
+	},
+
+	scrollToPage( targetPage, animationSpeed ){
 		const { pageWrap } = this.refs;
 		const page = $(this.refs.pageWrap).find(`.page[data-position="${targetPage}"]`);
 		if ( page[0] ){
 			const leftOffset = $(page).position().left;
 			Velocity(pageWrap, 'stop');
-			Velocity(pageWrap, { left: -leftOffset }, { duration: animate ? 200 : 400 }, 'ease-out');
+			Velocity(pageWrap, { left: -leftOffset }, { duration: animationSpeed }, 'ease-out');
 		}
 	},
 
-	focusOnPage( targetPage, animate ){
-		const { activePageIndex } = this.state;
-		this.setState({ activePageIndex: targetPage }, () => {
-			console.log($(this.refs.project).offset().top);
-			if ( _.isNull( activePageIndex )){
-				const projects = document.getElementById('Projects')
-				console.log(projects);
-				Velocity(projects, 'stop')
-				Velocity(this.refs.project, 'scroll', { container:$(projects), duration: 200});
-			}
-		})
+	focusOnProject( animationSpeed ){
+		const { windowHeight } = this.context;
+		const { project } = this.refs;
+		const projects = document.getElementById('Projects')
+
+		const projectsHeight = $(projects).outerHeight();
+		const projectsDistanceFromTop = windowHeight - projectsHeight;
+
+		const projectHeight = $(project).outerHeight();
+		const projectTop = $(project).offset().top - projectsDistanceFromTop;
+		const projectBottom = projectTop + projectHeight;
+
+		Velocity(projects, 'stop')
+		if ( projectTop < 0 ) {
+			Velocity(project, 'scroll', {container: $(projects), duration: animationSpeed});
+		} else if ( projectBottom > projectsHeight ){
+			Velocity(project, 'scroll', {container: $(projects), offset: -projectTop + ( projectBottom - projectsHeight), duration: animationSpeed});
+		}
 	},
 
 	clearFocus(){
@@ -51,27 +84,30 @@ const Project = React.createClass({
 	},
 
 	render() {
-		const { activePageIndex } = this.state;
-		const { project } = this.props;
+		const { project, isLastProject } = this.props;
+		const { utils:{ parseSearchString, stringifyQuery }, history, windowHeight } = this.context;
+		const query = parseSearchString( history.location.search );
 
-		let description = project.overview;
 		const pageComponents = [], pageSelectors = [];
-		const isFocusedProject = !_.isNull(activePageIndex);
+		const isFocusedProject = parseInt(query.project) === project.id;
 		_.each( project.pages, ( page, i ) => {
-			const isActivePage = isFocusedProject && i === activePageIndex;
-			if ( isActivePage )
-				description = page.description;
-			const relativePosition = isFocusedProject ? i - activePageIndex : null;
+			// const isActivePage = isFocusedProject && i === activePageIndex;
+			const isActivePage = isFocusedProject && i === parseInt(query.page);
+			const relativePosition = isFocusedProject ? i - parseInt(query.page) : null;
 			pageComponents.push(
 				<Page
 					key={`${project.title}-${page.title}-${i}`}
 					page={ page }
-					isActive={ isActivePage }
+					isActive={ isFocusedProject && i === parseInt(query.page) }
 					position={ i }
 					relativePosition={ relativePosition }
 					onClick={() => {
-						if ( !isActivePage )
-							this.focusOnPage( i, isFocusedProject );
+						if (!(isFocusedProject && i === parseInt(query.page)))
+							history.push({
+								pathname:history.location.pathname,
+								search: stringifyQuery({ ...query, project:project.id, page:i }),
+								state: { prevQuery: stringifyQuery( query )}
+							})
 					}}
 				/>
 			)
@@ -82,8 +118,12 @@ const Project = React.createClass({
 					data-active={ isActivePage }
 					onClick={() => {
 						isActivePage ?
-							this.clearFocus() :
-							this.focusOnPage( i, isFocusedProject )
+							history.push({ pathname:history.location.pathname }) :
+							history.push({
+								pathname:history.location.pathname,
+								search: stringifyQuery({ ...query, project:project.id, page:i }),
+								state: { prevQuery: stringifyQuery( query )}
+							})
 					}}>
 					{ page.title }
 				</div>
@@ -94,7 +134,8 @@ const Project = React.createClass({
 			<div
 				className="project"
 				ref="project"
-				data-project-focused={ activePageIndex !== null }>
+				style={{ marginBottom: isLastProject && windowHeight && Math.round(windowHeight/16) - 30 > 0 ? `${Math.round(windowHeight/16) - 30}rem` : 0 }}
+				data-project-focused={ isFocusedProject }>
 				<div className="title">
 					{ project.title }
 				</div>
@@ -102,7 +143,7 @@ const Project = React.createClass({
 					{ pageSelectors }
 				</div>
 				<div className="overview">
-					<p>{ description }</p>
+					<p>{ project.overview }</p>
 				</div>
 
 				<div className="pages">
@@ -116,5 +157,12 @@ const Project = React.createClass({
 
 	}
 });
+
+Project.contextTypes = {
+	utils: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired,
+	windowHeight: PropTypes.number.isRequired
+};
+
 
 export default Project

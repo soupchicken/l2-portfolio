@@ -53,6 +53,22 @@
     font-family:'Abel', sans-serif;
     font-size:1.125rem;
   }
+  .description {
+    position:absolute;
+    bottom:.3125rem;
+    left:.5rem;
+    max-width:calc(100% - 1rem);
+    padding: .625rem 1rem;
+    background:rgba(0,0,0,.8);
+    border-radius:.25rem;
+    line-height:1.5625rem;
+    font-family:'Asap', sans-serif;
+    font-size:1.1875rem;
+    opacity:0;
+    transition: opacity 500ms ease-out;
+    p { margin: 0 }
+
+  }
   img {
     position:relative;
     box-sizing: content-box;

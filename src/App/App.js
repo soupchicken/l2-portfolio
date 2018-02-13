@@ -8,6 +8,11 @@ import { Route } from 'react-router-dom';
 import Sidebar from './Sidebar/Sidebar'
 import Canvas from './Canvas/Canvas'
 
+import utils from '../utils'
+let windowHeight = 0;
+if ( typeof window !== 'undefined' )
+	windowHeight = window.innerHeight;
+
 const App = React.createClass({
 
   getInitialState(){
@@ -15,16 +20,27 @@ const App = React.createClass({
     if ( typeof window !== 'undefined' && window.navigator )
       md = new MobileDetect(window.navigator.userAgent);
     return {
-      isMobile: md.mobile && md.mobile() !== null,
+      isMobile: !!md.mobile && md.mobile() !== null,
       dispatcher: _.clone(Backbone.Events)
     }
   },
 
+	componentDidMount(){
+		if ( typeof window !== 'undefined' )
+			window.addEventListener('resize', () => {
+				windowHeight = window.innerHeight;
+			})
+	},
+
   getChildContext(){
     const { dispatcher, isMobile } = this.state;
+		const { history } = this.props;
     return {
       isMobile,
-      dispatcher
+			windowHeight,
+      dispatcher,
+			utils,
+			history
     }
   },
 
@@ -44,7 +60,6 @@ const App = React.createClass({
   render() {
     const { isMobile } = this.state;
 		const { staticContext } = this.props;
-
 
 		// Determine if routes are valid, pass error information to server via staticContext object
     if ( staticContext ) this.assignStaticContext()
@@ -66,7 +81,10 @@ const App = React.createClass({
 
 App.childContextTypes = {
   dispatcher: PropTypes.object.isRequired,
-  isMobile: PropTypes.bool.isRequired
+  isMobile: PropTypes.bool.isRequired,
+	utils: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired,
+	windowHeight: PropTypes.number.isRequired
 };
 
 export default App

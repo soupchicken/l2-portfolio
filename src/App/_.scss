@@ -18,7 +18,6 @@ html, body, #App, #MobileApp {
   &#MobileApp { flex-direction:column }
   [data-hidden="true"]{ display:none }
 
-
   @import 'Sidebar/_';
   @import 'Canvas/_';
 }

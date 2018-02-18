@@ -1,5 +1,4 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
@@ -11,41 +10,30 @@ import Page from './Page/Page'
 
 const Project = React.createClass({
 
-	getInitialState(){
-		return {
-			activePageIndex: null,
-			pageWidths:[]
-		}
-	},
-
 	componentDidMount(){
-		setTimeout(() => {
-			const { project } = this.props;
-			const { utils:{ parseSearchString }, history } = this.context;
-			const query = parseSearchString( history.location.search );
-			const prevQuery = parseSearchString( history.location.state ? history.location.state.prevQuery : '' );
+		const { project } = this.props;
+		const { utils:{ parseSearchString }, history:{ location }} = this.context;
+		const query = parseSearchString( location.search );
 
-			if( parseInt(query.project) === project.id ){
-				this.focusOnProject( 0 );
-				this.scrollToPage( parseInt(query.page), 0 )
-			}
-
-		}, 0)
+		if( parseInt(query.project) === project.id ){
+			this.focusOnProject( 0 );
+			this.scrollToPage( parseInt(query.page), 0 )
+		}
 	},
 
 	componentDidUpdate(){
 		const { project } = this.props;
-		const { utils:{ parseSearchString }, history } = this.context;
-		const query = parseSearchString( history.location.search );
-		const prevQuery = parseSearchString( history.location.state ? history.location.state.prevQuery : '' );
+		const { utils:{ parseSearchString }, history:{ location }} = this.context;
+		const query = parseSearchString( location.search );
+		const prevQuery = location.state && location.state.prevQuery ? location.state.prevQuery : {};
 
 		if( parseInt(query.project) === project.id )
 			this.focusOnProject( 200 );
 
-		if ( query.project !== prevQuery.project && query.page ) {
+		if ( query.project !== prevQuery.project && query.page ){
 			this.scrollToPage(parseInt(query.page), 0)
-		} else if ( parseInt(query.project) === project.id && ( query.page !== prevQuery.page )) {
-			this.scrollToPage(parseInt(query.page), 200)
+		} else if ( parseInt( query.project ) === project.id && query.page !== prevQuery.page ){
+			this.scrollToPage(parseInt(query.page), 300)
 		}
 	},
 
@@ -53,34 +41,32 @@ const Project = React.createClass({
 		const { pageWrap } = this.refs;
 		const page = $(this.refs.pageWrap).find(`.page[data-position="${targetPage}"]`);
 		if ( page[0] ){
-			const leftOffset = $(page).position().left;
-			Velocity(pageWrap, 'stop');
-			Velocity(pageWrap, { left: -leftOffset }, { duration: animationSpeed }, 'ease-out');
+			const pageX = $(page).position().left;
+			Velocity( pageWrap, 'stop');
+			Velocity( pageWrap, { left:-pageX }, { duration: animationSpeed }, 'ease-out');
 		}
 	},
+
 
 	focusOnProject( animationSpeed ){
-		const { windowHeight } = this.context;
-		const { project } = this.refs;
-		const projects = document.getElementById('Projects')
-
-		const projectsHeight = $(projects).outerHeight();
-		const projectsDistanceFromTop = windowHeight - projectsHeight;
-
-		const projectHeight = $(project).outerHeight();
-		const projectTop = $(project).offset().top - projectsDistanceFromTop;
-		const projectBottom = projectTop + projectHeight;
-
-		Velocity(projects, 'stop')
-		if ( projectTop < 0 ) {
-			Velocity(project, 'scroll', {container: $(projects), duration: animationSpeed});
-		} else if ( projectBottom > projectsHeight ){
-			Velocity(project, 'scroll', {container: $(projects), offset: -projectTop + ( projectBottom - projectsHeight), duration: animationSpeed});
+		const container = {
+			element: document.getElementById('Projects'),
+			height:$(document.getElementById('Projects')).outerHeight(),
+			yTop: $(document.getElementById('Projects')).offset().top
 		}
-	},
+		const project = {
+			element: this.refs.project,
+			yTop: $(this.refs.project).offset().top,
+			yBottom: $(this.refs.project).offset().top + $(this.refs.project).outerHeight()
+		}
 
-	clearFocus(){
-		this.setState({ activePageIndex: null })
+		Velocity( container.element, 'stop' );
+		if ( project.yTop - container.yTop < 0 ) {
+			Velocity( project.element, 'scroll', { container: $(container.element), duration: animationSpeed });
+		} else if ( project.yBottom > ( container.height + container.yTop )){
+			const offset = ( project.yBottom - container.height ) - project.yTop;
+			Velocity( project.element, 'scroll', { container: $(container.element), offset, duration: animationSpeed });
+		}
 	},
 
 	render() {
@@ -89,24 +75,25 @@ const Project = React.createClass({
 		const query = parseSearchString( history.location.search );
 
 		const pageComponents = [], pageSelectors = [];
-		const isFocusedProject = parseInt(query.project) === project.id;
+		const focusedProject = parseInt(query.project);
+		const focusedPage = parseInt(query.page);
+		const isFocusedProject = project.id === focusedProject;
 		_.each( project.pages, ( page, i ) => {
-			// const isActivePage = isFocusedProject && i === activePageIndex;
-			const isActivePage = isFocusedProject && i === parseInt(query.page);
-			const relativePosition = isFocusedProject ? i - parseInt(query.page) : null;
+			const isFocusedPage = isFocusedProject && i === focusedPage;
+			const relativePosition = isFocusedProject ? i - focusedPage : null;
 			pageComponents.push(
 				<Page
 					key={`${project.title}-${page.title}-${i}`}
 					page={ page }
-					isActive={ isFocusedProject && i === parseInt(query.page) }
+					isFocused={ isFocusedPage }
 					position={ i }
 					relativePosition={ relativePosition }
 					onClick={() => {
-						if (!(isFocusedProject && i === parseInt(query.page)))
+						if (!isFocusedPage)
 							history.push({
 								pathname:history.location.pathname,
 								search: stringifyQuery({ ...query, project:project.id, page:i }),
-								state: { prevQuery: stringifyQuery( query )}
+								state: { prevQuery: query }
 							})
 					}}
 				/>
@@ -115,14 +102,14 @@ const Project = React.createClass({
 				<div
 					key={`${project.title}-${page.title}-selectors-${i}`}
 					className="page-selector"
-					data-active={ isActivePage }
+					data-focused={ isFocusedPage }
 					onClick={() => {
-						isActivePage ?
+						isFocusedPage ?
 							history.push({ pathname:history.location.pathname }) :
 							history.push({
 								pathname:history.location.pathname,
 								search: stringifyQuery({ ...query, project:project.id, page:i }),
-								state: { prevQuery: stringifyQuery( query )}
+								state: { prevQuery: query }
 							})
 					}}>
 					{ page.title }
@@ -134,7 +121,7 @@ const Project = React.createClass({
 			<div
 				className="project"
 				ref="project"
-				style={{ marginBottom: isLastProject && windowHeight && Math.round(windowHeight/16) - 30 > 0 ? `${Math.round(windowHeight/16) - 30}rem` : 0 }}
+				style={{ marginBottom: isLastProject && windowHeight && Math.round(windowHeight)/16 - 30 > 0 ? `${Math.round(windowHeight)/16 - 30}rem` : 0 }}
 				data-project-focused={ isFocusedProject }>
 				<div className="title">
 					{ project.title }

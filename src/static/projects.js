@@ -39,22 +39,23 @@ export default [
 			},
 			{
 				id:7,
+				title:'Other Genres',
+				image:'/images/twi-other-games.png',
+				description:'The mobile site version of the webapp'
+			},
+			{
+				id:7,
 				title:'Why Fighting Games?',
-				image:'/images/twi-fgc.png',
+				image:'/images/twi-smash.png',
 				description:'Thanks to templating, we were able to quickly churn out content for other fighting game communities, namely: SFV, Tekken 7, Guilty Gear and Injustice 2.'
 			},
 			{
 				id:7,
 				title:'Infographic Automation',
-				image:'/images/twi-melee.jpg',
+				image:'/images/twi-melee.png',
 				description:'I created software templates to automate generation of the infographic, saving 2+ days weekly.'
 			},
-			{
-				id:7,
-				title:'Other Genres',
-				image:'/images/twi-other-games.png',
-				description:'The mobile site version of the webapp'
-			},
+
 			{
 				id:8,
 				title:'Life Before Automation',

@@ -76,7 +76,7 @@ function renderFullPage(html, initialState ) {
     <!doctype html>
     <html lang="en" xml:lang="en">
       <head>
-        <title>L2 Productions</title>
+        <title>Lucas Lemos</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="L2 Boilerplate"/>
         <link rel="icon" type="img/ico" href="images/favicon.ico"/>

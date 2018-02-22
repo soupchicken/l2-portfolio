@@ -17,6 +17,7 @@ html, body, #App, #MobileApp {
   &#App { flex-direction:row }
   &#MobileApp { flex-direction:column }
   [data-hidden="true"]{ display:none }
+  [data-transparent="true"]{ opacity:0; pointer-events:none }
 
   @import 'Sidebar/_';
   @import 'Canvas/_';

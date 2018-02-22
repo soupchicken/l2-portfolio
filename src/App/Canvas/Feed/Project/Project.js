@@ -81,40 +81,44 @@ const Project = React.createClass({
 		_.each( project.pages, ( page, i ) => {
 			const isFocusedPage = isFocusedProject && i === focusedPage;
 			const relativePosition = isFocusedProject ? i - focusedPage : null;
-			pageComponents.push(
-				<Page
-					key={`${project.title}-${page.title}-${i}`}
-					page={ page }
-					isFocused={ isFocusedPage }
-					position={ i }
-					relativePosition={ relativePosition }
-					onClick={() => {
-						if (!isFocusedPage)
-							history.push({
-								pathname:history.location.pathname,
-								search: stringifyQuery({ ...query, project:project.id, page:i }),
-								state: { prevQuery: query }
-							})
-					}}
-				/>
-			)
-			pageSelectors.push(
-				<div
-					key={`${project.title}-${page.title}-selectors-${i}`}
-					className="page-selector"
-					data-focused={ isFocusedPage }
-					onClick={() => {
-						isFocusedPage ?
-							history.push({ pathname:history.location.pathname }) :
-							history.push({
-								pathname:history.location.pathname,
-								search: stringifyQuery({ ...query, project:project.id, page:i }),
-								state: { prevQuery: query }
-							})
-					}}>
-					{ page.title }
-				</div>
-			)
+			page.title === 'BREAK' ?
+				pageComponents.push(<div key={`${project.id}-${i}`} className="break" />) :
+				pageComponents.push(
+
+					<Page
+						key={`${project.title}-${page.title}-${i}`}
+						page={ page }
+						isFocused={ isFocusedPage }
+						position={ i }
+						relativePosition={ relativePosition }
+						onClick={() => {
+							if (!isFocusedPage)
+								history.push({
+									pathname:history.location.pathname,
+									search: stringifyQuery({ ...query, project:project.id, page:i }),
+									state: { prevQuery: query }
+								})
+						}}
+					/>
+				)
+			if ( page.title !== 'BREAK' )
+				pageSelectors.push(
+					<div
+						key={`${project.title}-${page.title}-selectors-${i}`}
+						className="page-selector"
+						data-focused={ isFocusedPage }
+						onClick={() => {
+							isFocusedPage ?
+								history.push({ pathname:history.location.pathname }) :
+								history.push({
+									pathname:history.location.pathname,
+									search: stringifyQuery({ ...query, project:project.id, page:i }),
+									state: { prevQuery: query }
+								})
+						}}>
+						{ page.title }
+					</div>
+				)
 		})
 
 		return (

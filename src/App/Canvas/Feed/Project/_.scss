@@ -14,7 +14,7 @@
     }
     .pages {
       overflow:hidden;
-      min-height:30rem;
+      min-height:38rem;
       .wrap {
         position:absolute;
         left:0;
@@ -30,7 +30,8 @@
             z-index:10;
             height:calc(100% - .5rem);
             opacity:1;
-            .description { opacity:1 }
+            &:hover .body { opacity:1 }
+            .body { opacity:0 }
           }
           &[data-relative-position="1"]{
             opacity:.8;
@@ -106,8 +107,9 @@
     transition: all 100ms ease-out;
   }
   .title {
+    font-family:'Abel', serif;
     line-height:2rem;
-    font-size:2rem;
+    font-size:1.9375rem;
     font-weight:600;
   }
   .overview {
@@ -115,6 +117,7 @@
     p {
       max-width:38rem;
       margin: 0;
+      line-height:1.5625rem;
     }
   }
   .page-selectors {
@@ -161,6 +164,12 @@
   }
   .pages {
     position:relative;
+    //.wrap { width:100% }
+    .break {
+      height:0;
+      min-width:100%;
+
+    }
     //transition: min-height 50ms ease-out;
     @import 'Page/_';
   }

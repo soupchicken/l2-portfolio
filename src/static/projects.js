@@ -2,8 +2,11 @@ export default [
 	{
 		id:1,
 		title:"Autokal - eSports simplified",
-		overview:"Autokal is an eSports events directory and community site, and my path to mastering software development. Currently under construction after a successful pilot.",
-		links:[{ display_text:'Autokal (dev build)' , url:'https://demo.autokal.com/' }],
+		overview:"An eSports events directory, VOD repository, and community site.",
+		links:[
+			{ display_text:'Demo' , url:'https://demo.autokal.com/' }
+		],
+
 		year:2017,
 		pages:[
 			{
@@ -36,7 +39,7 @@ export default [
 				id:1,
 				title:'Forms',
 				image:'/images/ak-forms.png',
-				description:'The forms created to populate event content, uses my own personal library of react input polyfills.'
+				description:'Built using my own personal library of custom react input polyfills.'
 			},
 			{
 				id:2,
@@ -58,25 +61,25 @@ export default [
 				title:'Next Steps',
 				image:'/images/under-construction.png',
 				description:'A new version is currently under construction.' +
-				'	It will introduce an account system that enables content moderation, subscriptions, commenting and many more features.'
+				'	It will introduce a revamped account system enabling content moderation, subscriptions, commenting and many more features.'
 			},
 		]
 	},
 	{
 		id:2,
-		title:'Infographic Series - "This Weekend In"',
-		overview:"Weekly eSports events newsletter with a heavy focus on Fighting Games",
+		title:'"This Weekend In X" - Event Infographic Series',
+		overview:"Weekly eSports events newsletter. Over 1M views in 2017.",
 		year:2017,
 		pages:[
 			{
 				id:7,
 				title:'Overview',
 				image:'/images/twi-overview.png',
-				description:'Thanks to templating, we were able to quickly churn out content for other fighting game communities, namely: SFV, Tekken 7, Guilty Gear and Injustice 2.'
+				description:''
 			},
 			{
 				id:7,
-				title:'Relationship to Autokal',
+				title:'TWI & Autokal',
 				image:'/images/twi-melee.png',
 				description:'I created software templates to automate generation of the infographic, saving 2+ days weekly.'
 			},

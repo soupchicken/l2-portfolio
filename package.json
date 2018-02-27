@@ -7,10 +7,10 @@
     "clean": "rm -rf build",
     "build": "npm run clean && export NODE_ENV=production && mkdir build && webpack",
     "local": "export NODE_ENV=local && webpack && babel-node server.js",
-    "production": "npm run build && pm2 start build/server.js -i 1 --name='portfolio'",
+    "production": "npm run build && pm2 kill && pm2 start build/server.js -i 1 --name='portfolio'",
     "build-win": "npm run clean && set NODE_ENV=production&& mkdir build && webpack",
     "local-win": "set NODE_ENV=local&& webpack && babel-node server.js",
-    "production-win": "npm run build-win && pm2 start build/server.js -i 1 --name='portfolio'"
+    "production-win": "npm run build-win && pm2 kill &&  pm2 start build/server.js -i 1 --name='portfolio'"
   },
   "repository": {
     "type": "git",

@@ -3,16 +3,12 @@
   flex-direction:column;
   float:left;
   width:100%;
-  padding: 1.5rem .5625rem .625rem .875rem;
+  padding: 1.25rem .5625rem .625rem .875rem;
   //margin-top:.125rem;
   border-bottom:1px solid rgba(0,0,0,.375);
   &:last-of-type { margin-bottom:50%; }
   &:first-of-type { margin-top:0 }
   &[data-project-focused="true"]{
-    .overview {
-      display:none;
-      margin: .5rem 0;
-    }
     .pages {
       overflow:hidden;
       min-height:38rem;
@@ -92,11 +88,6 @@
     }
   }
   &[data-project-focused="false"]{
-    .overview {
-      margin: .625rem 0 .6875rem;
-      //padding-bottom:1rem;
-      //border-bottom:1px solid rgba(0,0,0,.25);
-    }
     .pages {
       min-height:12.5rem;
     }
@@ -110,26 +101,68 @@
     padding: 0 .3125rem;
     transition: all 100ms ease-out;
   }
-  .title {
-    font-family:'Slabo 27px', serif;
-    //font-family:'Roboto', serif;
-    //font-family:'Lato', serif;
-    line-height:1.25rem;
-    font-size:2.125rem;
-    font-weight:700;
+  .project-header {
+    display:flex;
+    flex-direction:row;
+    .title {
+      font-family:'Slabo 27px', serif;
+      //font-family:'Roboto', serif;
+      //font-family:'Lato', serif;
+      margin-right:.25rem;
+      line-height:2.5rem;
+      font-size:2.0625rem;
+      font-weight:700;
+    }
+    .links {
+      flex:1;
+      .link {
+        position:relative;
+        float:left;
+        margin: .125rem .25rem 0;
+        padding:0 3rem 0 .75rem;
+        //background:rgba(0,0,0,.3);
+        background:rgba(0,0,0,0);
+        border:1px solid rgba(0,0,0,.6);
+        border-radius:3px;
+        line-height:1.875rem;
+        font-family:'Lato', sans-serif;
+        font-size:1em;
+        color:white;
+        text-decoration:none;
+        cursor:pointer;
+        opacity:.85;
+        transition: all 150ms ease-out;
+        &:hover {
+          opacity: 1;
+          background:rgba(0,0,0,.11);
+        }
+        &:before {
+          position:absolute;
+          right:0;
+          top:0;
+          width:2.25rem;
+          border-left:1px solid rgba(0,0,0,.2);
+          text-align:center;
+          line-height:2.1225rem;
+          font-size:1.25rem;
+        }
+      }
+    }
   }
   .overview {
     font-family:'Lato', serif;
-    font-size:1.1875rem;
+    font-size:1.125rem;
+    margin: .125rem 0 .3125rem;
     p {
       max-width:52rem;
       margin: 0;
       line-height:1.5625rem;
     }
   }
+
   .page-selectors {
     //display:none;
-    margin: .5625rem 0 .25rem;
+    margin: 0 0 .25rem;
     padding: 0 .3125rem;
 
     .break {

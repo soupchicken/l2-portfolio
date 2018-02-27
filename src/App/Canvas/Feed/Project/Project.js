@@ -122,20 +122,40 @@ const Project = React.createClass({
 				)
 		})
 
+		const projectLinks = [];
+		_.each( project.links, ( link, i ) => {
+			projectLinks.push(
+				<a
+					key={`${project.id}-${link.display_text}-${i}`}
+					className="link icon-link-external"
+					target="_blank"
+					href={ link.url }>
+					{ link.display_text }
+				</a>
+			)
+
+
+		})
+
 		return (
 			<div
 				className="project"
 				ref="project"
 				style={{ marginBottom: isLastProject && windowHeight && Math.round(windowHeight)/16 - 30 > 0 ? `${Math.round(windowHeight)/16 - 30}rem` : 0 }}
 				data-project-focused={ isFocusedProject }>
-				<div className="title">
-					{ project.title }
+				<div className="project-header">
+					<div className="title">
+						{ project.title }
+					</div>
+					<div className="links">
+						{ projectLinks }
+					</div>
+				</div>
+				<div className="overview" data-hidden={ isFocusedProject }>
+					<p>{ project.overview }</p>
 				</div>
 				<div className="page-selectors" data-hidden={ !isFocusedProject }>
 					{ pageSelectors }
-				</div>
-				<div className="overview">
-					<p>{ project.overview }</p>
 				</div>
 
 				<div className="pages">

@@ -82,7 +82,7 @@ const Project = React.createClass({
 			const isFocusedPage = isFocusedProject && i === focusedPage;
 			const relativePosition = isFocusedProject ? i - focusedPage : null;
 			page.title === 'BREAK' ?
-				pageComponents.push(<div key={`${project.id}-${i}`} className="break" />) :
+				pageComponents.push(<div key={`${project.id}-${page.title}-${i}`} className="break" />) :
 				pageComponents.push(
 
 					<Page
@@ -101,7 +101,8 @@ const Project = React.createClass({
 						}}
 					/>
 				)
-			if ( page.title !== 'BREAK' )
+			page.title === 'BREAK' ?
+				pageSelectors.push(<div key={`page-selector-${project.id}-${i}`} className="break" />) :
 				pageSelectors.push(
 					<div
 						key={`${project.title}-${page.title}-selectors-${i}`}

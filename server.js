@@ -82,6 +82,7 @@ function renderFullPage(html, initialState ) {
         <link rel="icon" type="img/ico" href="images/favicon.ico"/>
          <link href="https://file.myfontastic.com/S5Djnt87giP8msQyxwAYVP/icons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Mukta+Mahee|Roboto|Roboto+Condensed|Slabo+27px" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         ${ stylesheet }
       </head>

@@ -3,10 +3,11 @@
   flex-direction:column;
   float:left;
   width:100%;
-  padding: .875rem .5625rem .875rem .875rem;
-  border-top:1px solid rgba(0,0,0,.2);
+  padding: 1.5rem .5625rem .625rem .875rem;
+  //margin-top:.125rem;
+  border-bottom:1px solid rgba(0,0,0,.375);
   &:last-of-type { margin-bottom:50%; }
-  &:first-of-type { border-top:none }
+  &:first-of-type { margin-top:0 }
   &[data-project-focused="true"]{
     .overview {
       display:none;
@@ -15,6 +16,7 @@
     .pages {
       overflow:hidden;
       min-height:38rem;
+      .break { display:none }
       .wrap {
         position:absolute;
         left:0;
@@ -91,7 +93,9 @@
   }
   &[data-project-focused="false"]{
     .overview {
-      margin: .625rem 0;
+      margin: .625rem 0 .6875rem;
+      //padding-bottom:1rem;
+      //border-bottom:1px solid rgba(0,0,0,.25);
     }
     .pages {
       min-height:12.5rem;
@@ -107,32 +111,42 @@
     transition: all 100ms ease-out;
   }
   .title {
-    font-family:'Abel', serif;
-    line-height:2rem;
-    font-size:1.9375rem;
-    font-weight:600;
+    font-family:'Slabo 27px', serif;
+    //font-family:'Roboto', serif;
+    //font-family:'Lato', serif;
+    line-height:1.25rem;
+    font-size:2.125rem;
+    font-weight:700;
   }
   .overview {
-    font-size:1.125rem;
+    font-family:'Lato', serif;
+    font-size:1.1875rem;
     p {
-      max-width:38rem;
+      max-width:52rem;
       margin: 0;
       line-height:1.5625rem;
     }
   }
   .page-selectors {
     //display:none;
-    margin: .375rem 0 .5rem;
+    margin: .5625rem 0 .25rem;
     padding: 0 .3125rem;
 
+    .break {
+      float:left;
+      width:1px;
+      margin: .5rem .625rem 0;
+      height:1.5rem;
+      background:rgba(0,0,0,.28);
+    }
     .page-selector {
       position:relative;
       float:left;
       margin: 0 .25rem;
-      padding: 0 .4375rem;
+      padding: 0 .3875rem;
       border-bottom:1px solid rgba(255,255,255,.3);
       line-height:2rem;
-      font-size:1.25rem;
+      font-size:1.3125rem;
       font-family:'Abel', sans-serif;
       opacity:.5;
       cursor:pointer;
@@ -153,7 +167,7 @@
             width:1.5625rem;
             line-height:1.875rem;
             text-align:center;
-            font-family:'Asap', sans-serif;
+            font-family:'Lato', sans-serif;
             font-size:1.25rem;
             font-weight:700;
             transition: opacity 150ms ease-out;
@@ -166,8 +180,10 @@
     position:relative;
     //.wrap { width:100% }
     .break {
-      height:0;
+      height:1px;
       min-width:100%;
+      background:rgba(0,0,0,.125);
+      margin:.4375rem 0 .3125rem;
 
     }
     //transition: min-height 50ms ease-out;

@@ -1,33 +1,70 @@
 export default [
 	{
 		id:1,
-		title:"Autokal",
-		overview:"eSports events directory and community site",
+		title:"Autokal - eSports simplified",
+		overview:"Autokal is an eSports events directory and community site, and my path to mastering software development. Currently under construction after a successful pilot.",
+		links:[{ display_text:'Autokal (dev build)' , url:'https://demo.autokal.com/' }],
 		year:2017,
 		pages:[
 			{
 				id:1,
-				title:'Desktop',
+				title:'Overview',
+				image:'/images/ak-overview.png',
+				description:'Covering 7 games and counting, Autokal helps its ~2k weekly users quickly find out what\'s happening in their favorite eSport ' +
+										'with detailed event information and a directory of past event VODs.'
+			},
+			{
+				id:1,
+				title:'Desktop App',
 				image:'/images/ak-desktop.png',
-				description:'React, NodeJS. A templating tool turned app. Real-time event information & easy-access VODs'
+				description:'Each event includes links to brackets, registration, etc. Users can also access past VODs on the right hand side.' +
+										' Viewer counts and thumbnails of live events are pulled from Twitch.'
 			},
 			{
 				id:2,
 				title:'Mobile - Events',
 				image:'/images/ak-mobile-events.png',
-				description:'The mobile site version of the webapp'
+				description:'Users can quickly browse events on their phone through our mobile site'
 			},
 			{
 				id:2,
 				title:'Mobile - VODs',
 				image:'/images/ak-mobile-vods.png',
-				description:'The mobile site version of the webapp'
-			}
+				description:'The mobile site also provides easy access to event VODs'
+			},
+			{
+				id:1,
+				title:'Forms',
+				image:'/images/ak-forms.png',
+				description:'The forms created to populate event content, uses my own personal library of react input polyfills.'
+			},
+			{
+				id:2,
+				title:'Backend & DevOps',
+				image:'/images/backend-devops.png',
+				description:'Autokal is deployed on AWS and consists of four different programs: ' +
+				'The webapp frontend, an API gateway for authentication, the API itself and an image-processing server for cutting up and uploading images to S3. ' +
+				'API uses HAL format. PostgreSQL materialized views are used extensively. Mocha for testing.'
+			},
+			{
+				id:1,
+				title:'Prior Versions',
+				image:'/images/ak-history.png',
+				description:'Autokal was envisioned half a decade ago as a general events app where users subscribe to organizers creating an "auto-calendar", hence the name.' +
+				' The current version is a culmination of these efforts.'
+			},
+			{
+				id:1,
+				title:'Next Steps',
+				image:'/images/under-construction.png',
+				description:'A new version is currently under construction.' +
+				'	It will introduce an account system that enables content moderation, subscriptions, commenting and many more features.'
+			},
 		]
 	},
 	{
 		id:2,
-		title:'"This Weekend In" - Infographic Series',
+		title:'Infographic Series - "This Weekend In"',
 		overview:"Weekly eSports events newsletter with a heavy focus on Fighting Games",
 		year:2017,
 		pages:[
@@ -39,28 +76,28 @@ export default [
 			},
 			{
 				id:7,
-				title:'Other Genres',
-				image:'/images/twi-other-games.png',
-				description:'The mobile site version of the webapp'
+				title:'Relationship to Autokal',
+				image:'/images/twi-melee.png',
+				description:'I created software templates to automate generation of the infographic, saving 2+ days weekly.'
 			},
+			{ title:'BREAK' },
 			{
 				id:7,
-				title:'Why Fighting Games?',
+				title:'Sample Infographic',
 				image:'/images/twi-smash.png',
 				description:'Thanks to templating, we were able to quickly churn out content for other fighting game communities, namely: SFV, Tekken 7, Guilty Gear and Injustice 2.'
 			},
 			{
 				id:7,
-				title:'Infographic Automation',
+				title:'Design Evolution',
 				image:'/images/twi-melee.png',
 				description:'I created software templates to automate generation of the infographic, saving 2+ days weekly.'
 			},
-
 			{
-				id:8,
-				title:'Life Before Automation',
-				image:'/images/twi-smash.png',
-				description:'ExpressJS HAL API with separate authentication server. Heavy use of materialized views.'
+				id:7,
+				title:'Discontinued Games',
+				image:'/images/twi-other-games.png',
+				description:'The mobile site version of the webapp'
 			},
 			{
 				id:6,
@@ -79,6 +116,18 @@ export default [
 		pages:[
 			{
 				id:12,
+				title:'V3 - Overview',
+				image:'/images/ak-v3-autokal.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			},
+			{
+				id:12,
+				title:'V3 - Takeaways',
+				image:'/images/ak-v3-autokal.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			},
+			{
+				id:12,
 				title:'V3 - Channels',
 				image:'/images/ak-v3-autokal.png',
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
@@ -93,6 +142,18 @@ export default [
 				title:'BREAK'
 			},
 			{
+				id:12,
+				title:'V2 - Overview',
+				image:'/images/ak-v2.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			},
+			{
+				id:12,
+				title:'V2 - Takeaways',
+				image:'/images/ak-v2.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			},
+			{
 				id:13,
 				title:'V2 - Mobile Designs',
 				image:'/images/ak-v2-mobile-events.png',
@@ -100,7 +161,7 @@ export default [
 			},
 			{
 				id:14,
-				title:'V2',
+				title:'V2 - Backend',
 				image:'/images/ak-v2.png',
 				description:'First react app - took about six months. UX ended up confusing, tried fitting in too much functionality on the top level. Worthwhile learning experience'
 			},
@@ -109,7 +170,13 @@ export default [
 			},
 			{
 				id:15,
-				title:'V1',
+				title:'V1 - Overview',
+				image:'/images/ak-v1.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			},
+			{
+				id:15,
+				title:'V1 - Takeaways',
 				image:'/images/ak-v1.png',
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
 			}
@@ -121,6 +188,12 @@ export default [
 		overview:"Assorted work",
 		year:2018,
 		pages:[
+			{
+				id:9,
+				title:'Portfolio',
+				image:'/images/kiiyo-logo.png',
+				description:'Logo & Album art for LA electronic artist Kiiyo. Inspired by the symmetry of Mayan stone carvings.'
+			},
 			{
 				id:9,
 				title:'Kiiyo Logo Design',

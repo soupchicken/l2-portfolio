@@ -11,28 +11,28 @@ import Page from './Page/Page'
 const Project = React.createClass({
 
 	componentDidMount(){
-		const { project } = this.props;
+		const { position } = this.props;
 		const { utils:{ parseSearchString }, history:{ location }} = this.context;
 		const query = parseSearchString( location.search );
 
-		if( parseInt(query.project) === project.id ){
+		if( parseInt(query.project) === position ){
 			this.focusOnProject( 0 );
 			this.scrollToPage( parseInt(query.page), 0 )
 		}
 	},
 
 	componentDidUpdate(){
-		const { project } = this.props;
+		const { position } = this.props;
 		const { utils:{ parseSearchString }, history:{ location }} = this.context;
 		const query = parseSearchString( location.search );
 		const prevQuery = location.state && location.state.prevQuery ? location.state.prevQuery : {};
 
-		if( parseInt(query.project) === project.id )
+		if( parseInt(query.project) === position )
 			this.focusOnProject( 200 );
 
 		if ( query.project !== prevQuery.project && query.page ){
 			this.scrollToPage(parseInt(query.page), 0)
-		} else if ( parseInt( query.project ) === project.id && query.page !== prevQuery.page ){
+		} else if ( parseInt( query.project ) === position && query.page !== prevQuery.page ){
 			this.scrollToPage(parseInt(query.page), 300)
 		}
 	},
@@ -70,14 +70,14 @@ const Project = React.createClass({
 	},
 
 	render() {
-		const { project, isLastProject } = this.props;
+		const { project, position, isLastProject } = this.props;
 		const { utils:{ parseSearchString, stringifyQuery }, history, windowHeight } = this.context;
 		const query = parseSearchString( history.location.search );
 
 		const pageComponents = [], pageSelectors = [];
 		const focusedProject = parseInt(query.project);
 		const focusedPage = parseInt(query.page);
-		const isFocusedProject = project.id === focusedProject;
+		const isFocusedProject = position === focusedProject;
 		_.each( project.pages, ( page, i ) => {
 			const isFocusedPage = isFocusedProject && i === focusedPage;
 			const relativePosition = isFocusedProject ? i - focusedPage : null;
@@ -95,7 +95,7 @@ const Project = React.createClass({
 							if (!isFocusedPage)
 								history.push({
 									pathname:history.location.pathname,
-									search: stringifyQuery({ ...query, project:project.id, page:i }),
+									search: stringifyQuery({ ...query, project:position, page:i }),
 									state: { prevQuery: query }
 								})
 						}}
@@ -113,7 +113,7 @@ const Project = React.createClass({
 								history.push({ pathname:history.location.pathname }) :
 								history.push({
 									pathname:history.location.pathname,
-									search: stringifyQuery({ ...query, project:project.id, page:i }),
+									search: stringifyQuery({ ...query, project:position, page:i }),
 									state: { prevQuery: query }
 								})
 						}}>
@@ -175,6 +175,5 @@ Project.contextTypes = {
 	history: PropTypes.object.isRequired,
 	windowHeight: PropTypes.number.isRequired
 };
-
 
 export default Project

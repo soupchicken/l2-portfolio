@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Page = React.createClass({
 
@@ -10,6 +11,9 @@ const Page = React.createClass({
 	render() {
 		const { imageLoaded } = this.state;
 		const { page, onClick, position, isFocused, relativePosition } = this.props;
+		const { history, utils:{ parseSearchString, stringifyQuery }} = this.context;
+
+		const query = parseSearchString( history.location.search );
 
 		return (
 			<div
@@ -27,6 +31,16 @@ const Page = React.createClass({
 					<div className="label">
 						{ page.title }
 					</div>
+				<div
+					className="expand-btn icon-expand"
+					onClick={() => {
+						history.push({
+							pathname:`/project/${query.project}`,
+							search: stringifyQuery({ page:query.page }),
+							state: { prevQuery: query }
+						})
+					}}
+				/>
 				<div className="body">
 					<div className="page-title">
 						{ page.title }
@@ -39,5 +53,10 @@ const Page = React.createClass({
 
 	}
 });
+
+Page.contextTypes = {
+	utils: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired
+};
 
 export default Page

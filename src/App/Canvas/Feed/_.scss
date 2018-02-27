@@ -61,6 +61,7 @@
     position:relative;
     flex:1;
     overflow:auto;
+    &::-webkit-scrollbar { display: none }
     @import 'Project/_';
   }
 

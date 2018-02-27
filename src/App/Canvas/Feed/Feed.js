@@ -29,6 +29,7 @@ const Feed = React.createClass({
 				<Project
 					key={ `${project.title}-${i}` }
 					project={ project }
+					position={ i }
 					isLastProject={ i + 1 === projects.length }
 				/>
 			)

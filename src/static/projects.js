@@ -2,11 +2,10 @@ export default [
 	{
 		id:1,
 		title:"Autokal - eSports simplified",
-		overview:"An eSports events directory, VOD repository, and community site.",
+		overview:"eSports events directory, VOD repository, and community site.",
 		links:[
 			{ display_text:'Demo' , url:'https://demo.autokal.com/' }
 		],
-
 		year:2017,
 		pages:[
 			{
@@ -110,7 +109,6 @@ export default [
 			},
 		]
 	},
-
 	{
 		id:4,
 		title:"Autokal - Prior Versions",
@@ -194,7 +192,7 @@ export default [
 			{
 				id:9,
 				title:'Portfolio',
-				image:'/images/kiiyo-logo.png',
+				image:'/images/intergalactic-text.png',
 				description:'Logo & Album art for LA electronic artist Kiiyo. Inspired by the symmetry of Mayan stone carvings.'
 			},
 			{

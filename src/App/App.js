@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 
 import Sidebar from './Sidebar/Sidebar'
 import Canvas from './Canvas/Canvas'
+import FullPage from './FullPage/ConnectedFullPage'
 
 import utils from '../utils'
 let windowHeight = 0;
@@ -34,21 +35,31 @@ const App = React.createClass({
 
   getChildContext(){
     const { dispatcher, isMobile } = this.state;
-		const { history } = this.props;
+		const { history, match } = this.props;
     return {
       isMobile,
 			windowHeight,
       dispatcher,
 			utils,
-			history
+			history,
+			match
     }
   },
 
 	assignStaticContext(){
-		const { staticContext, location } = this.props;
+		const { staticContext, history, location, match } = this.props;
+		console.log(history, location, match)
 		switch( location.pathname ){
 			// VALID PATHS
 			case '/':
+			// TODO: MAKE THIS INTELLIGENT
+			case '/project/0':
+			case '/project/1':
+			case '/project/2':
+			case '/project/3':
+			case '/project/4':
+			case '/project/5':
+			case '/project/6':
 				return
 
 			// SERVER REDIRECT
@@ -71,6 +82,7 @@ const App = React.createClass({
     } else {
       return (
         <div id="App">
+					<Route path="/project/:project_id" component={FullPage} />
 					<Route path="/" component={Sidebar} />
 					<Route path="/" component={Canvas} />
 				</div>
@@ -84,6 +96,7 @@ App.childContextTypes = {
   isMobile: PropTypes.bool.isRequired,
 	utils: PropTypes.object.isRequired,
 	history: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired,
 	windowHeight: PropTypes.number.isRequired
 };
 

@@ -7,30 +7,41 @@
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,.4);
-  padding: 3.5rem 5rem 6.5rem 5rem;
+  background:rgba(0,0,0,.75);
+  padding: 1.25rem 2rem 9.75rem;
   z-index:9999;
+  &[data-transitioning="true"]{
+    .body .details, .body img {
+      margin-top:10px;
+      opacity: 0;
+      transition: none;
+    }
+  }
 
   .body {
     position:relative;
     height:100%;
     //flex:1;
-    img { height: 100% }
-    &:hover .details { opacity: .95 }
+    img { margin-top:0; height: 100%; max-width:100%; opacity: 1; transition: all 200ms ease-out; }
+    //&:hover .details { opacity: .2; transition: opacity 250ms 3000ms ease-out; }
     .details {
       position:absolute;
-      left:4.625rem;
-      top:3.25rem;
-      opacity:0;
-      transition: opacity 150ms ease-out;
+      min-height:13rem;
+      left:1.125rem;
+      bottom:-8.5rem;
+      margin-top:0;
+      opacity:1;
+      transition: all 400ms 50ms ease-out;
+      pointer-events: none;
+      .title, .description p { pointer-events: all }
       &:hover { opacity: 1 }
       .title {
         float:left;
-        margin-bottom:3px;
+        margin-bottom:2px;
         padding: 0 1.3125rem;
-        background:rgba(0,0,0,.8);
-        line-height:4.625rem;
-        font-size:3rem;
+        background:rgba(0,0,0,.95);
+        line-height:4.25rem;
+        font-size:2.625rem;
         font-weight:700;
         font-family:'Abel', sans-serif;
       }
@@ -41,10 +52,10 @@
           float:left;
           margin: 0;
           padding: .6875rem 1.3125rem;
-          max-width:64rem;
-          background:rgba(0,0,0,.8);
-          line-height:2rem;
-          font-size:1.5rem;
+          max-width:58rem;
+          background:rgba(0,0,0,.95);
+          line-height:1.875rem;
+          font-size:1.375rem;
         }
       }
     }

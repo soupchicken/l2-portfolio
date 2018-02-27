@@ -3,7 +3,27 @@ import PropTypes from 'prop-types';
 
 const FullPage = React.createClass({
 
-	render() {
+	getInitialState(){
+		return {
+			transitioning:true
+		}
+	},
+
+	componentDidMount(){
+		this.setState({ transitioning: false })
+	},
+
+	componentDidUpdate( prevProps, prevState ){
+		const { transitioning } = this.state;
+		if ( prevProps.activePage !== this.props.activePage && !transitioning ) {
+			this.setState({transitioning: true},
+				setTimeout(() => this.setState({transitioning: false}), 200)
+			)
+		}
+	},
+
+	render(){
+		const { transitioning } = this.state;
 		const { project, activePage, history, history: { location }, match } = this.props;
 		const {  utils:{ parseSearchString, stringifyQuery }} = this.context;
 
@@ -11,10 +31,8 @@ const FullPage = React.createClass({
 
 		const page = project.pages[activePage];
 
-		console.log( 'ACTIVE PAGE', activePage);
-
 		return (
-			<div id="FullPage" ref="fullPage" onClick={ e => {
+			<div id="FullPage" ref="fullPage" data-transitioning={ transitioning } onClick={ e => {
 				if ( e.target === this.refs.fullPage )
 					history.push({
 						pathname:'/',
@@ -22,7 +40,6 @@ const FullPage = React.createClass({
 						state: { prevQuery: query }
 					})
 			}}>
-
 				<div className="body">
 					<img src={ page.image }/>
 					<div className="details">

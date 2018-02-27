@@ -48,20 +48,20 @@ export default [
 				'The webapp frontend, an API gateway for authentication, the API itself and an image-processing server for cutting up and uploading images to S3. ' +
 				'API uses HAL format. PostgreSQL materialized views are used extensively. Mocha for testing.'
 			},
-			{
-				id:1,
-				title:'Prior Versions',
-				image:'/images/ak-history.png',
-				description:'Autokal was envisioned half a decade ago as a general events app where users subscribe to organizers creating an "auto-calendar", hence the name.' +
-				' The current version is a culmination of these efforts.'
-			},
-			{
-				id:1,
-				title:'Next Steps',
-				image:'/images/under-construction.png',
-				description:'A new version is currently under construction.' +
-				'	It will introduce a revamped account system enabling content moderation, subscriptions, commenting and many more features.'
-			},
+			// {
+			// 	id:1,
+			// 	title:'Prior Versions',
+			// 	image:'/images/ak-history.png',
+			// 	description:'Autokal was envisioned half a decade ago as a general events app where users subscribe to organizers creating an "auto-calendar", hence the name.' +
+			// 	' The current version is a culmination of these efforts.'
+			// },
+			// {
+			// 	id:1,
+			// 	title:'Next Steps',
+			// 	image:'/images/under-construction.png',
+			// 	description:'A new version is currently under construction.' +
+			// 	'	It will introduce a revamped account system enabling content moderation, subscriptions, commenting and many more features.'
+			// },
 		]
 	},
 	{

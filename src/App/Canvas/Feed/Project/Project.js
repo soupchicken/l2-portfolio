@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Route } from 'react-router-dom';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
@@ -6,7 +7,7 @@ let Velocity = {};
 if ( typeof window !== 'undefined' )
 	Velocity = require('velocity-animate')
 
-import Page from './Page/Page'
+import Page from './Page/ConnectedPage'
 
 const Project = React.createClass({
 
@@ -62,9 +63,9 @@ const Project = React.createClass({
 
 		Velocity( container.element, 'stop' );
 		if ( project.yTop - container.yTop < 0 ) {
-			Velocity( project.element, 'scroll', { container: $(container.element), duration: animationSpeed });
+			Velocity( project.element, 'scroll', { container: $(container.element), offset:-30, duration: animationSpeed });
 		} else if ( project.yBottom > ( container.height + container.yTop )){
-			const offset = ( project.yBottom - container.height ) - project.yTop;
+			const offset = ( project.yBottom - container.height ) - project.yTop + 40;
 			Velocity( project.element, 'scroll', { container: $(container.element), offset, duration: animationSpeed });
 		}
 	},
@@ -74,6 +75,8 @@ const Project = React.createClass({
 		const { utils:{ parseSearchString, stringifyQuery }, history, windowHeight } = this.context;
 		const query = parseSearchString( history.location.search );
 
+		console.log(this.props);
+
 		const pageComponents = [], pageSelectors = [];
 		const focusedProject = parseInt(query.project);
 		const focusedPage = parseInt(query.page);
@@ -81,45 +84,44 @@ const Project = React.createClass({
 		_.each( project.pages, ( page, i ) => {
 			const isFocusedPage = isFocusedProject && i === focusedPage;
 			const relativePosition = isFocusedProject ? i - focusedPage : null;
-			page.title === 'BREAK' ?
-				pageComponents.push(<div key={`${project.id}-${page.title}-${i}`} className="break" />) :
-				pageComponents.push(
-
-					<Page
-						key={`${project.title}-${page.title}-${i}`}
-						page={ page }
-						isFocused={ isFocusedPage }
-						position={ i }
-						relativePosition={ relativePosition }
-						onClick={() => {
-							if (!isFocusedPage)
-								history.push({
-									pathname:history.location.pathname,
-									search: stringifyQuery({ ...query, project:position, page:i }),
-									state: { prevQuery: query }
-								})
-						}}
-					/>
-				)
-			page.title === 'BREAK' ?
-				pageSelectors.push(<div key={`page-selector-${project.id}-${i}`} className="break" />) :
-				pageSelectors.push(
-					<div
-						key={`${project.title}-${page.title}-selectors-${i}`}
-						className="page-selector"
-						data-focused={ isFocusedPage }
-						onClick={() => {
-							isFocusedPage ?
-								history.push({ pathname:history.location.pathname }) :
-								history.push({
-									pathname:history.location.pathname,
-									search: stringifyQuery({ ...query, project:position, page:i }),
-									state: { prevQuery: query }
-								})
-						}}>
-						{ page.title }
-					</div>
-				)
+			pageComponents.push(
+				<Route path="/" key={`${project.title}-${page.title}-${i}`} render={ routeProps => {
+					return (
+						<Page
+							page={ page }
+							isFocused={ isFocusedPage }
+							position={ i }
+							relativePosition={ relativePosition }
+							onClick={() => {
+								if (!isFocusedPage)
+									history.push({
+										pathname:history.location.pathname,
+										search: stringifyQuery({ ...query, project:position, page:i }),
+										state: { prevQuery: query }
+									})
+							}}
+							{ ...routeProps }
+						/>
+					)
+				}}/>
+			)
+			pageSelectors.push(
+				<div
+					key={`${project.title}-${page.title}-selectors-${i}`}
+					className="page-selector"
+					data-focused={ isFocusedPage }
+					onClick={() => {
+						isFocusedPage ?
+							history.push({ pathname:history.location.pathname }) :
+							history.push({
+								pathname:history.location.pathname,
+								search: stringifyQuery({ ...query, project:position, page:i }),
+								state: { prevQuery: query }
+							})
+					}}>
+					{ page.title }
+				</div>
+			)
 		})
 
 		const projectLinks = [];

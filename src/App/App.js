@@ -48,7 +48,7 @@ const App = React.createClass({
 
 	assignStaticContext(){
 		const { staticContext, history, location, match } = this.props;
-		console.log(history, location, match)
+
 		switch( location.pathname ){
 			// VALID PATHS
 			case '/':

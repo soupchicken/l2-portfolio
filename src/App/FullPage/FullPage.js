@@ -15,11 +15,10 @@ const FullPage = React.createClass({
 
 	componentDidUpdate( prevProps, prevState ){
 		const { transitioning } = this.state;
-		if ( prevProps.activePage !== this.props.activePage && !transitioning ) {
+		if ( prevProps.activePage !== this.props.activePage && !transitioning )
 			this.setState({transitioning: true},
 				setTimeout(() => this.setState({transitioning: false}), 200)
 			)
-		}
 	},
 
 	render(){
@@ -46,6 +45,16 @@ const FullPage = React.createClass({
 						<div className="title">{ page.title }</div>
 						<div className="description"><p>{ page.description }</p></div>
 					</div>
+					<div
+						className="collapse-btn icon-collapse"
+						onClick={() => {
+							history.push({
+								pathname:'/',
+								search:stringifyQuery({ ...query, project:match.params.project_id }),
+								state: { prevQuery: query }
+							})
+						}}
+					/>
 				</div>
 				<div
 					className="page-switch icon-caret-left"

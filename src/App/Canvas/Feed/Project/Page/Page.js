@@ -5,11 +5,22 @@ const Page = React.createClass({
 
 	getInitialState(){
 		return {
-			imageLoaded: false
+			imageLoaded: false,
+			transitioning: true
 		}
 	},
+
+	componentDidMount(){
+		this.setState({ transitioning: false })
+	},
+
+	componentDidUpdate( prevProps ){
+		const { transitioning } = this.state;
+		if ( prevProps.activePage !== this.props.activePage && !transitioning )
+			this.setState({ transitioning: true }, () => setTimeout(() => this.setState({transitioning: false}), 200 ))
+	},
 	render() {
-		const { imageLoaded } = this.state;
+		const { imageLoaded, transitioning } = this.state;
 		const { page, onClick, position, isFocused, relativePosition } = this.props;
 		const { history, utils:{ parseSearchString, stringifyQuery }} = this.context;
 
@@ -21,6 +32,7 @@ const Page = React.createClass({
 				onClick={ onClick }
 				data-position={ position }
 				data-off-screen={ relativePosition < 0 }
+				data-transitioning={ transitioning }
 				data-transparent={!imageLoaded}
 				data-relative-position={ relativePosition }
 				data-is-active={isFocused}>
@@ -41,11 +53,22 @@ const Page = React.createClass({
 						})
 					}}
 				/>
+				<div
+					className="close-project icon-cancel"
+					onClick={() => {
+						history.push({
+							pathname:'/',
+							state: { prevQuery: query }
+						})
+					}}
+				/>
 				<div className="body">
 					<div className="page-title">
 						{ page.title }
 					</div>
-					<p>{ page.description }</p>
+					<div className="description">
+						<p>{ page.description }</p>
+					</div>
 				</div>
 
 			</div>
@@ -56,7 +79,8 @@ const Page = React.createClass({
 
 Page.contextTypes = {
 	utils: PropTypes.object.isRequired,
-	history: PropTypes.object.isRequired
+	history: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired
 };
 
 export default Page

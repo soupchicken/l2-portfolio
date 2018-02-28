@@ -82,7 +82,6 @@ export default [
 				image:'/images/twi-melee.png',
 				description:'I created software templates to automate generation of the infographic, saving 2+ days weekly.'
 			},
-			{ title:'BREAK' },
 			{
 				id:7,
 				title:'Sample Infographic',
@@ -140,9 +139,6 @@ export default [
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
 			},
 			{
-				title:'BREAK'
-			},
-			{
 				id:12,
 				title:'V2 - Overview',
 				image:'/images/ak-v2.png',
@@ -166,9 +162,7 @@ export default [
 				image:'/images/ak-v2.png',
 				description:'First react app - took about six months. UX ended up confusing, tried fitting in too much functionality on the top level. Worthwhile learning experience'
 			},
-			{
-				title:'BREAK'
-			},
+
 			{
 				id:15,
 				title:'V1 - Overview',

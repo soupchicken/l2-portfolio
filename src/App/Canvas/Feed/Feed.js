@@ -26,12 +26,15 @@ const Feed = React.createClass({
 		const projectComponents = [];
 		_.each( projects, ( project, i ) => {
 			projectComponents.push(
-				<Project
-					key={ `${project.title}-${i}` }
-					project={ project }
-					position={ i }
-					isLastProject={ i + 1 === projects.length }
-				/>
+				<Route path="/" key={`${project.title}-${i}`} render={ routeProps => {
+					return (
+						<Project
+							project={ project }
+							position={ i }
+							isLastProject={ i + 1 === projects.length }
+							{ ...routeProps }
+						/>
+					)}}/>
 			)
 		})
 

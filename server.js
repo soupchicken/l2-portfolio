@@ -81,9 +81,7 @@ function renderFullPage(html, initialState ) {
         <meta name="description" content="L2 Boilerplate"/>
         <link rel="icon" type="img/ico" href="images/favicon.ico"/>
          <link href="https://file.myfontastic.com/S5Djnt87giP8msQyxwAYVP/icons.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lato|Mukta+Mahee|Roboto|Roboto+Condensed|Slabo+27px" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Abel|Slabo+27px" rel="stylesheet">
         ${ stylesheet }
       </head>
       <body>

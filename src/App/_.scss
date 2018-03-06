@@ -32,7 +32,13 @@ and (max-width: 1668px){
   html, body, #App, #Autokal { font-size: 15px }
 }
 @media screen
-and (min-width: 0)
+and (min-width: 1250px)
 and (max-width: 1435px){
   html, body, #App, #Autokal { font-size: 14px }
+}
+
+@media screen
+and (min-width: 0)
+and (max-width: 1250px){
+  html, body, #App, #Autokal { font-size: 13px }
 }

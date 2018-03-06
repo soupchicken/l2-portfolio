@@ -6,12 +6,48 @@ const Page = React.createClass({
 	getInitialState(){
 		return {
 			imageLoaded: false,
-			transitioning: true
+			transitioning: true,
+			descriptionFaded:false
 		}
 	},
+	fadeDelay: 6000,
+	fadeTimeout: null,
 
 	componentDidMount(){
 		this.setState({ transitioning: false })
+
+		const { image } = this.refs;
+		// Hover over image long enough and the text fades out showing the whole image
+		image.addEventListener('mouseenter', this.startFading );
+		image.addEventListener('mousemove', this.resetFadeDelay );
+		image.addEventListener('mouseleave', this.stopFading );
+	},
+
+	startFading(){
+		this.fadeTimeout = setTimeout(() => {
+			this.setState({ descriptionFaded: true });
+		}, this.fadeDelay )
+	},
+
+	resetFadeDelay(){
+		const { descriptionFaded } = this.state;
+		if ( descriptionFaded )
+			this.setState({ descriptionFaded: false })
+		clearTimeout(this.fadeTimeout);
+		this.startFading();
+	},
+
+	stopFading(){
+		this.setState({ descriptionFaded: false }, () => {
+			clearTimeout( this.fadeTimeout );
+		});
+	},
+
+	componentWillUnmount(){
+		const { image } = this.refs;
+		image.removeEventListener('mouseenter', this.startFading );
+		image.removeEventListener('mousemove', this.resetFadeDelay );
+		image.removeEventListener('mouseleave', this.stopFading );
 	},
 
 	componentDidUpdate( prevProps ){
@@ -20,7 +56,7 @@ const Page = React.createClass({
 			this.setState({ transitioning: true }, () => setTimeout(() => this.setState({transitioning: false}), 200 ))
 	},
 	render() {
-		const { imageLoaded, transitioning } = this.state;
+		const { imageLoaded, descriptionFaded, transitioning } = this.state;
 		const { page, onClick, position, isFocused, relativePosition } = this.props;
 		const { history, utils:{ parseSearchString, stringifyQuery }} = this.context;
 
@@ -33,10 +69,12 @@ const Page = React.createClass({
 				data-position={ position }
 				data-off-screen={ relativePosition < 0 }
 				data-transitioning={ transitioning }
+				data-description-faded={ descriptionFaded }
 				data-transparent={!imageLoaded}
 				data-relative-position={ relativePosition }
 				data-is-active={isFocused}>
 					<img
+						ref="image"
 						src={ page.image }
 						onLoad={() => this.setState({ imageLoaded:true })}
 					/>
@@ -62,7 +100,7 @@ const Page = React.createClass({
 						})
 					}}
 				/>
-				<div className="body">
+				<div className="body" data-transparent={ !isFocused }>
 					<div className="page-title">
 						{ page.title }
 					</div>

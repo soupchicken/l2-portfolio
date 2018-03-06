@@ -82,15 +82,6 @@ const Feed = React.createClass({
 							</div>
 							<div
 								className="tag"
-								data-active={ query.filter && query.filter === 'devops' }
-								onClick={() => {
-									query.filter || query.filter !== 'devops' ?
-										this.activateFilter('devops') : this.clearFilter()
-								}}>
-								DevOps
-							</div>
-							<div
-								className="tag"
 								data-active={ query.filter && query.filter === 'react' }
 								onClick={() => {
 									query.filter || query.filter !== 'react' ?

@@ -30,15 +30,13 @@
             opacity:1;
             &[data-transitioning="true"]{
               &:hover .body { opacity:1 !important; transition:none; }
+
             }
             &:hover {
-              .body {
-                opacity:.04; transition:all 375ms 2000ms ease-out;
-                &:hover { opacity: 1; transition: 150ms ease-out }
-              }
+              .body { transition: all 375ms ease-out;}
               .expand-btn, .close-project { opacity: 1 }
             }
-            .body { opacity:1; transition:none; }
+            .body { transition:none; }
             .expand-btn, .close-project { opacity: 0 }
           }
           &[data-relative-position="1"]{
@@ -100,6 +98,9 @@
   &[data-project-focused="false"]{
     .pages {
       min-height:12.5rem;
+      .page .body {
+        display:none;
+      }
     }
     .pages .wrap {
       display:flex;

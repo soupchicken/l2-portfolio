@@ -63,9 +63,9 @@ const Project = React.createClass({
 
 		Velocity( container.element, 'stop' );
 		if ( project.yTop - container.yTop < 0 ) {
-			Velocity( project.element, 'scroll', { container: $(container.element), offset:-30, duration: animationSpeed });
+			Velocity( project.element, 'scroll', { container: $(container.element), duration: animationSpeed });
 		} else if ( project.yBottom > ( container.height + container.yTop )){
-			const offset = ( project.yBottom - container.height ) - project.yTop + 40;
+			const offset = ( project.yBottom - container.height ) - project.yTop + 10;
 			Velocity( project.element, 'scroll', { container: $(container.element), offset, duration: animationSpeed });
 		}
 	},

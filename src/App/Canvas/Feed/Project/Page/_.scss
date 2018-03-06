@@ -21,6 +21,9 @@
     opacity:1;
     transition: opacity 100ms ease-out;
   }
+  &[data-description-faded="true"]{
+    .body { opacity: 0 }
+  }
   &[data-is-active="true"]{
     &:before { display:none }
   }
@@ -130,8 +133,8 @@
     border-radius:3px;
     line-height:1.4375rem;
     font-size:1.0625rem;
-    opacity:0;
-    pointer-events:none;
+    //opacity:0;
+    //pointer-events:none;
     .page-title, p { pointer-events:all }
     .page-title {
       float:left;
@@ -146,7 +149,7 @@
       float:left;
       width:100%;
       margin-top:2px;
-      pointer-events:none;
+      //pointer-events:none;
       p {
         float:left;
         max-width:48rem;
@@ -155,7 +158,7 @@
         background:rgba(0,0,0,.8);
         line-height:1.5rem;
         font-size:1.125rem;
-        pointer-events:all;
+        //pointer-events:all;
       }
     }
   }

@@ -75,13 +75,16 @@ const Project = React.createClass({
 		const { utils:{ parseSearchString, stringifyQuery }, history, windowHeight } = this.context;
 		const query = parseSearchString( history.location.search );
 
-		console.log(this.props);
+		const pages = !query.filter ? project.pages :
+			project.pages.filter( page => _.includes( page.tags, query.filter ));
+
+
 
 		const pageComponents = [], pageSelectors = [];
 		const focusedProject = parseInt(query.project);
 		const focusedPage = parseInt(query.page);
 		const isFocusedProject = position === focusedProject;
-		_.each( project.pages, ( page, i ) => {
+		_.each( pages, ( page, i ) => {
 			const isFocusedPage = isFocusedProject && i === focusedPage;
 			const relativePosition = isFocusedProject ? i - focusedPage : null;
 			pageComponents.push(

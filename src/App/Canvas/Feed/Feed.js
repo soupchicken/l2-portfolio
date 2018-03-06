@@ -13,6 +13,7 @@ const Feed = React.createClass({
 
 	activateFilter( newFilter ){
 		const { utils:{ stringifyQuery }, history } = this.context;
+		// this.refs.projects.scrollTop = 0;
 		history.push({ pathname:history.location.pathname, search:stringifyQuery({ filter:newFilter }) })
 	},
 
@@ -23,8 +24,11 @@ const Feed = React.createClass({
 		const { utils:{ parseSearchString }, history } = this.context;
 		const query = parseSearchString( history.location.search );
 
+		const activeProjects = !query.filter ? projects :
+			projects.filter( project => _.includes( project.tags, query.filter ));
+
 		const projectComponents = [];
-		_.each( projects, ( project, i ) => {
+		_.each( activeProjects, ( project, i ) => {
 			projectComponents.push(
 				<Route path="/" key={`${project.title}-${i}`} render={ routeProps => {
 					return (
@@ -60,6 +64,33 @@ const Feed = React.createClass({
 							</div>
 							<div
 								className="tag"
+								data-active={ query.filter && query.filter === 'frontend' }
+								onClick={() => {
+									query.filter || query.filter !== 'frontend' ?
+										this.activateFilter('frontend') : this.clearFilter()
+								}}>
+								Frontend
+							</div>
+							<div
+								className="tag"
+								data-active={ query.filter && query.filter === 'backend' }
+								onClick={() => {
+									query.filter || query.filter !== 'backend' ?
+										this.activateFilter('backend') : this.clearFilter()
+								}}>
+								Backend
+							</div>
+							<div
+								className="tag"
+								data-active={ query.filter && query.filter === 'devops' }
+								onClick={() => {
+									query.filter || query.filter !== 'devops' ?
+										this.activateFilter('devops') : this.clearFilter()
+								}}>
+								DevOps
+							</div>
+							<div
+								className="tag"
 								data-active={ query.filter && query.filter === 'react' }
 								onClick={() => {
 									query.filter || query.filter !== 'react' ?
@@ -67,19 +98,10 @@ const Feed = React.createClass({
 								}}>
 								React
 							</div>
-							<div
-								className="tag"
-								data-active={ query.filter && query.filter === 'logos' }
-								onClick={() => {
-									query.filter || query.filter !== 'logos' ?
-										this.activateFilter('logos') : this.clearFilter()
-								}}>
-								Logos
-							</div>
 						</div>
 					</div>
 				</div>
-				<div id="Projects">
+				<div id="Projects" ref="projects">
 					{ projectComponents }
 				</div>
 			</div>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Feed from './Feed'
 
 const mapStateToProps = function( state, ownProps ){
+	const { location } = ownProps;
 	return {
 		projects: state.data.projects
 	}

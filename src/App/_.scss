@@ -19,7 +19,20 @@ html, body, #App, #MobileApp {
   [data-hidden="true"]{ display:none }
   [data-transparent="true"]{ opacity:0; pointer-events:none }
 
+
+
   @import 'Sidebar/_';
   @import 'Canvas/_';
   @import 'FullPage/_';
+}
+
+@media screen
+and (min-width: 1435px)
+and (max-width: 1668px){
+  html, body, #App, #Autokal { font-size: 15px }
+}
+@media screen
+and (min-width: 0)
+and (max-width: 1435px){
+  html, body, #App, #Autokal { font-size: 14px }
 }

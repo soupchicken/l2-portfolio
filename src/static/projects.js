@@ -51,8 +51,46 @@ export default [
 				description:'Autokal is deployed on AWS. ' +
 										'There\'s a webapp, an API gateway for authentication, the API itself and an image-processing ' +
 										'worker for cutting up and uploading images to S3. ' +
-										'Each app is built on nodeJS. API uses HAL format. PostgreSQL database.'
+										'Each app is built with nodeJS. API uses HAL format. PostgreSQL database.'
 			},
+		]
+	},
+	{
+		title:"PunchMe - Customer Loyalty Rewards Platform",
+		overview:"A multi-platform customer loyalty application. I was the product manager.",
+		tags:['frontend','design'],
+		links:[{
+			display_text:'Eric Karbeling', url:'https://www.erickarbeling.com/'
+		}],
+		pages:[
+			{
+				title:'Overview',
+				tags:['design', 'frontend'],
+				image:'/images/punchme-overview.png',
+				description:'At PunchMe, I led a team of 8 outsourced developers and an in-house graphic designer. ' +
+				'Our product was built using Rails, Java and ObjectiveC backed by a PostgreSQL database. ' +
+				'Our graphic designer Eric and I split design duties. His portfolio is linked above'
+			},
+			{
+				title:'The Cards',
+				tags:['design'],
+				image:'/images/punchme-cards.png',
+				description:'Users could grab a card at any participating retailer and immediately register it on the tablet app and start ' +
+				'earning rewards. Vendors also had their own set of cards users could scan when a tablet was unavailable.'
+			},
+			{
+				title:'Mobile App',
+				tags:['design', 'frontend'],
+				image:'/images/punchme-ios-events.png',
+				description:'Through the phone app, users could check point balances, browse and redeem rewards and locate PunchMe retailers.'
+			},
+			{
+				title:'Tablet App',
+				tags:['design', 'frontend'],
+				image:'/images/punchme-tablet.png',
+				description:'Found on the counters of participating stores, the tablet app gave users the ability ' +
+				'to browse and redeem rewards at the register as well as a way to scan and register their cards'
+			}
 		]
 	},
 	{
@@ -139,7 +177,7 @@ export default [
 				title:'Overview',
 				tags:['design','react','frontend','backend'],
 				image:'/images/ak-v3-board.png',
-				description:'I designed and coded in the frontend. I worked with Juan ' +
+				description:'I designed and coded the frontend. I worked with Juan ' +
 										'Cancela on the backend (github link above). The app was feature rich, but never attracted many users. We scrapped ' +
 										'the frontend and retooled the backend for the newest version of Autokal'
 			},
@@ -212,45 +250,6 @@ export default [
 			}
 		]
 	},
-	{
-		title:"PunchMe - Loyalty Rewards Platform",
-		overview:"A multi-platform custom loyalty application. Development managed by me.",
-		tags:['frontend','design'],
-		links:[{
-			display_text:'Eric Karbeling', url:'https://www.erickarbeling.com/'
-		}],
-		pages:[
-			{
-				title:'Overview',
-				tags:['design', 'frontend'],
-				image:'/images/punchme-overview.png',
-				description:'At PunchMe, I led a team of 8 outsourced developers and an in-house graphic designer. ' +
-										'Our product was built using Rails, Java and ObjectiveC backed by a PostgreSQL database. ' +
-										'My graphic designer Eric and I split design duties. His portfolio is linked above'
-			},
-			{
-				title:'The Cards',
-				tags:['design'],
-				image:'/images/punchme-cards.png',
-				description:'Users could grab a card at any participating retailer and immediately register it on the tablet app and start ' +
-										'earning rewards. Vendors also had their own set of cards users could scan when a tablet was unavailable.'
-			},
-			{
-				title:'Mobile App',
-				tags:['design', 'frontend'],
-				image:'/images/punchme-ios-events.png',
-				description:'Through the phone app, users could check point balances, browse and redeem rewards and locate PunchMe retailers.'
-			},
-			{
-				title:'Tablet App',
-				tags:['design', 'frontend'],
-				image:'/images/punchme-tablet.png',
-				description:'Found on the counters of participating stores, the tablet app gave users the ability ' +
-										'to browse and redeem rewards at the register as well as a way to scan and register their cards'
-			}
-		]
-	},
-
 	{
 		title:"Pakkd - Facebook Event Aggregator",
 		overview:"A Facebook connect app that shows its users a directory of events in their school network",

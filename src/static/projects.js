@@ -19,9 +19,9 @@ export default [
 				title:'On Desktop',
 				tags:['design','frontend','react'],
 				image:'/images/ak-desktop.png',
-				description: 'Detailed event info, links, viewer counts and stream thumbnails make the desktop app the perfect' +
-										' tool for keeping tabs on ongoing tournaments. ' +
-										'Or, if nothing is live, browse replays from prior week\'s events. '
+				description: 'Autokal is the perfect tool for keeping tabs on ongoing tournaments. Users stop by for detailed event ' +
+										 'info, links to brackets and other info, viewer counts and stream thumbnails. ' +
+										 'Or, if nothing is live, they can always browse replays from prior week\'s events. '
 			},
 			{
 				title:'Mobile - Events',
@@ -58,7 +58,7 @@ export default [
 	{
 		title:'"This Weekend In" - Infographic Series',
 		tags:['design'],
-		overview:"Popular weekly eSports events newsletter. Over 1M views in 2017.",
+		overview:"Popular weekly eSports events publication. Over 1M views in 2017.",
 		pages:[
 			{
 				title:'Overview',
@@ -68,12 +68,11 @@ export default [
 										'Original versions were designed and revised by hand. Current versions are generated automatically by Autokal.'
 			},
 			{
-				title:'TWI & Autokal',
+				title:'TWI & Autokal\'s Development',
 				tags:['design'],
 				image:'/images/twi-autokal.png',
-				description:'TWI was where I experimented with new layouts for Autokal. It allowed me to iterate rapidly as ' +
-										'designing a new layout by hand is many times easier than coding one in. Also, our newsletter audiences ' +
-										'were regularly in the 10s of thousands - a good sample size. '
+				description:'Through weekly infographic revisions I experimented with new layouts for Autokal. It allowed me to iterate rapidly as ' +
+										'designing a new layout by hand is many times easier than coding one in.'
 			},
 			{
 				title:'Sample Infographic',
@@ -134,42 +133,47 @@ export default [
 		links:[
 			{ display_text:'Juan\'s Github', url:'https://github.com/juancancela' }
 		],
-		overview:"The third version of Autokal. April 2016 - March 2017",
+		overview:"3rd version of Autokal and 2nd React App. First production-quality API and foray into DevOps.",
 		pages:[
 			{
 				title:'Overview',
 				tags:['design','react','frontend','backend'],
 				image:'/images/ak-v3-board.png',
-				description:'My second React app and first foray into building a proper API. Frontend was all me, worked with a Juan ' +
-										'Cancela on the backend (github link above). It was feature rich, but never attracted many users before we scrapped it.'
+				description:'I designed and coded in the frontend. I worked with Juan ' +
+										'Cancela on the backend (github link above). The app was feature rich, but never attracted many users. We scrapped ' +
+										'the frontend and retooled the backend for the newest version of Autokal'
 			},
 			{
 				title:'Organizer Profiles',
 				tags:['design','react','frontend'],
 				image:'/images/ak-v3-autokal.png',
 				description:'Organizers had profile pages that users could subscribe to ' +
-										'where they could list all their upcoming and past events as well as whatever media they chose to showcase.'
+										'where they could list all their upcoming and past events, clips/videos they chose to showcase ' +
+										'and contact information.'
 			},
 			{
 				title:'Forms',
 				tags:['frontend','design','react'],
 				image:'/images/ak-v3-event-form.png',
-				description:'V3 was my first app deployed onto AWS. And my first experience developing a proper self-documenting HAL REST API. ' +
-										'Like V2, I used NodeJS to serve the app. However, I did change from from MongoDB to PostgreSQL for obvious reasons ' +
-										'(i.e. MongoDB is a mess).'
+				description:'Event fields like "participants" forced the creation of custom react inputs. ' +
+										'These components were generalized into an input library ' +
+										'I continued to use on v4'
 			}
 		]
 	},
 	{
 		title:"Autokal - V2",
-		overview:"History of the Autokal project",
+		overview:"My second attempt at Autokal. First time using Node & React.",
 		tags:['frontend','design','react'],
 		pages:[
 			{
 				title:'Overview',
 				tags:['frontend','design','react'],
 				image:'/images/ak-v2.png',
-				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+				description:'While the frontend code was passable React, the backend was a mess. ' +
+										'We suffered from the chicken and the egg problem and a confusing UX/UI ' +
+										'that tried to do too much. ' +
+										'That said it was a solid learning experience.'
 			},
 			{
 				title:'Mobile - Events',
@@ -181,56 +185,65 @@ export default [
 				title:'Mobile - Friends',
 				tags:['design'],
 				image:'/images/ak-v2-mobile-friends.png',
-				description:'Designs for a mobile app companion to version 2 that was never built'
+				description:'More designs demonstrating how we would implement our "friends" ' +
+										'functionality. Users would be able to broadcast which events they were ' +
+										'attending to their friends list.'
 			}
 		]
 	},
 	{
 		title:"Autokal - V1",
 		tags:['frontend','design'],
-		overview:"History of the Autokal project",
+		overview:"The first version of Autokal, and my first solo attempt at building an app.",
 		pages:[
 			{
 				title:'Overview',
 				tags:['frontend','design'],
 				image:'/images/ak-v1.png',
-				description:'My first real attempt at building Autokal. Never even saw a user as I scrapped it in dissatisfaction'
+				description:'My first attempt at a proper javascript frontend using BackboneJS for its router, views and dispatcher. ' +
+										'I leaned on Ruby on Rails for the backend - hiding away most of the complexity from my novice mind. ' +
+										'I never promoted it as I was not comfortable with its level of quality.'
 			},
 			{
 				title:'Organizers',
 				tags:['frontend','design'],
 				image:'/images/ak-v1-profiles.png',
-				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+				description:'Just some forms for managing a group page'
 			}
 		]
 	},
 	{
-		title:"PunchMe",
-		overview:"Product Manager @ Loyalty Rewards Platform Startup",
+		title:"PunchMe - Loyalty Rewards Platform",
+		overview:"A multi-platform custom loyalty application. Development managed by me.",
+		tags:['frontend','design'],
 		links:[{
 			display_text:'Eric Karbeling', url:'https://www.erickarbeling.com/'
 		}],
 		pages:[
 			{
 				title:'Overview',
+				tags:['design', 'frontend'],
 				image:'/images/punchme-overview.png',
-				description:'I was the product manager of a multi-platform loyalty application. ' +
-										'I led a team of 8 outsourced developers and a single in-house graphic designer. ' +
-										'Built using Rails, Java and ObjectiveC backed by a PostgreSQL database.'
+				description:'At PunchMe, I led a team of 8 outsourced developers and an in-house graphic designer. ' +
+										'Our product was built using Rails, Java and ObjectiveC backed by a PostgreSQL database. ' +
+										'My graphic designer Eric and I split design duties. His portfolio is linked above'
 			},
 			{
 				title:'The Cards',
+				tags:['design'],
 				image:'/images/punchme-cards.png',
 				description:'Users could grab a card at any participating retailer and immediately register it on the tablet app and start ' +
 										'earning rewards. Vendors also had their own set of cards users could scan when a tablet was unavailable.'
 			},
 			{
 				title:'Mobile App',
+				tags:['design', 'frontend'],
 				image:'/images/punchme-ios-events.png',
 				description:'Through the phone app, users could check point balances, browse and redeem rewards and locate PunchMe retailers.'
 			},
 			{
 				title:'Tablet App',
+				tags:['design', 'frontend'],
 				image:'/images/punchme-tablet.png',
 				description:'Found on the counters of participating stores, the tablet app gave users the ability ' +
 										'to browse and redeem rewards at the register as well as a way to scan and register their cards'
@@ -239,18 +252,20 @@ export default [
 	},
 
 	{
-		title:"Pakkd",
-		overview:"A Facebook app that shows its users a directory of events in their school network",
+		title:"Pakkd - Facebook Event Aggregator",
+		overview:"A Facebook connect app that shows its users a directory of events in their school network",
+		tags:['design', 'frontend'],
 		links:[
 			{ display_text:'Manu\'s LinkedIn', url:'https://www.linkedin.com/in/manu-bhat-7663b23a/'}
 		],
 		pages:[
 			{
 				title:'Humble Beginnings',
+				tags:['design', 'frontend'],
 				image:'/images/pakkd.png',
-				description:'An early screenshot of the first app I ever made. Ugly but effective. We had quite a few ' +
+				description:'The first app I ever worked on. Coded in tandem with my college roommate Manu Bhat. We had a good 50+ ' +
 										'regular users who would visit daily for the comprehensive list of college campus events & parties ' +
-										'our app would aggregate'
+										'our app would aggregate. Not bad for a school of 10k. Unfortunately, Facebook changes to how they handled networks killed the app.'
 			},
 		]
 	},

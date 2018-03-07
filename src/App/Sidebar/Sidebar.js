@@ -43,7 +43,7 @@ const Sidebar = React.createClass({
 		];
 
 		const tools = ['React','Node','AWS','PostgreSQL','Webpack','Docker'];
-		const languages = ['Javascript','SQL','CSS','Ruby','PHP','Go'];
+		const languages = ['Javascript','SQL','CSS','Ruby','Java','Go'];
 
 		const toolList = [];
 		_.each( tools, ( tool, i ) => {

@@ -1,6 +1,5 @@
 export default [
 	{
-		id:1,
 		title:"Autokal - eSports simplified",
 		overview:"\"eSports\" events app. Helps its users keep tabs on what's happening in their favorite games.",
 		tags:['design','frontend','react','backend','mobile'],
@@ -57,11 +56,9 @@ export default [
 		]
 	},
 	{
-		id:5,
 		title:'"This Weekend In" - Infographic Series',
 		tags:['design'],
 		overview:"Popular weekly eSports events newsletter. Over 1M views in 2017.",
-		year:2017,
 		pages:[
 			{
 				title:'Overview',
@@ -81,7 +78,7 @@ export default [
 			{
 				title:'Sample Infographic',
 				tags:['design'],
-				image:'/images/twi-smash.png',
+				image:'/images/twi-example.png',
 				description:'An example of the most recent versions of the infographics. Essentially a slightly modified screenshot of Autokal for ' +
 										'the given game.'
 			},
@@ -103,7 +100,6 @@ export default [
 		]
 	},
 	{
-		id:3,
 		title:"Miscellaneous",
 		overview:"Assorted work",
 		tags:['design','react','frontend'],
@@ -111,13 +107,12 @@ export default [
 			{ display_text:'Portfolio Code', url:'https://github.com/soupchicken/l2-portfolio' },
 			{ display_text:'Kiiyo Soundcloud', url:'https://soundcloud.com/kiiyomusic' }
 		],
-		year:2018,
 		pages:[
 			{
 				title:'Portfolio Site',
 				tags:['design','react','frontend'],
-				image:'/images/intergalactic-text.png',
-				description:'You\'re looking at it. Node & React. Check out the repo link above if you\'re curious.'
+				image:'/images/portfolio.png',
+				description:'Look familiar? Node & React. Check out the repo link above if you\'re curious.'
 			},
 			{
 				title:'Kiiyo Logo Design',
@@ -134,31 +129,29 @@ export default [
 		]
 	},
 	{
-		id:4,
 		title:"Autokal - V3",
 		tags:['design','react','frontend','backend'],
 		links:[
 			{ display_text:'Juan\'s Github', url:'https://github.com/juancancela' }
 		],
 		overview:"The third version of Autokal. April 2016 - March 2017",
-		year:2018,
 		pages:[
 			{
-				title:'V3 - Overview',
+				title:'Overview',
 				tags:['design','react','frontend','backend'],
 				image:'/images/ak-v3-autokal.png',
 				description:'My second React app and first foray into building a proper API. Frontend was all me, worked with a Juan ' +
-										'Cancela on the backend (see link above). It was feature rich, but never attracted many users before we scrapped it.'
+										'Cancela on the backend (github link above). It was feature rich, but never attracted many users before we scrapped it.'
 			},
 			{
-				title:'V3 - Organizer Profiles',
+				title:'Organizer Profiles',
 				tags:['design','react','frontend'],
 				image:'/images/ak-v3-autokal.png',
 				description:'Organizers had profile pages that users could subscribe to ' +
 										'where they could list all their upcoming and past events as well as whatever media they chose to showcase.'
 			},
 			{
-				title:'V3 - Backend & DevOps',
+				title:'Backend & DevOps',
 				tags:['backend'],
 				image:'/images/ak-v3-early.png',
 				description:'V3 was my first app deployed onto AWS. And my first experience developing a proper self-documenting HAL REST API. ' +
@@ -168,29 +161,42 @@ export default [
 		]
 	},
 	{
-		id:4,
 		title:"Autokal - V2",
 		overview:"History of the Autokal project",
-		year:2018,
 		pages:[
 			{
-				title:'V2 - Overview',
+				title:'Overview',
 				image:'/images/ak-v2.png',
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
 			},
 			{
-				title:'V2 - Mobile Designs',
+				title:'Mobile Designs',
 				image:'/images/ak-v2-mobile-events.png',
 				description:'Designs for a mobile app companion to version 2 that was never built'
 			}
 		]
 	},
-
 	{
-		id:5,
+		title:"Autokal - V1",
+		overview:"History of the Autokal project",
+		pages:[
+			{
+				id:15,
+				title:'Overview',
+				image:'/images/ak-v1.png',
+				description:'My first real attempt at building Autokal. Never even saw a user as I scrapped it in dissatisfaction'
+			},
+			{
+				id:15,
+				title:'V1 - Takeaways',
+				image:'/images/ak-v1-profiles.png',
+				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
+			}
+		]
+	},
+	{
 		title:"PunchMe",
 		overview:"Product Manager @ Loyalty Rewards Platform Startup",
-		year:2018,
 		pages:[
 			{
 				title:'Overview',
@@ -218,31 +224,10 @@ export default [
 			}
 		]
 	},
+
 	{
-		id:4,
-		title:"Autokal - V1",
-		overview:"History of the Autokal project",
-		year:2018,
-		pages:[
-			{
-				id:15,
-				title:'V1 - Overview',
-				image:'/images/ak-v1.png',
-				description:'My first real attempt at building Autokal. Never even saw a user as I scrapped it in dissatisfaction'
-			},
-			{
-				id:15,
-				title:'V1 - Takeaways',
-				image:'/images/ak-v1.png',
-				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
-			}
-		]
-	},
-	{
-		id:6,
 		title:"Pakkd",
 		overview:"A Facebook app that shows its users a directory of events in their school network",
-		year:2011,
 		pages:[
 			{
 				title:'Humble Beginnings',

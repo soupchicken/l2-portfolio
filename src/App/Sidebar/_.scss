@@ -11,7 +11,7 @@
   text-shadow: 1px 1px 1px black;
   .header {
     position:relative;
-    height:14.875rem;
+    min-height:14.875rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .portrait {
       position:absolute;
@@ -47,13 +47,13 @@
   .university {
     position:relative;
     height:4.125rem;
-    padding-left:4.375rem;
+    padding-left:3.875rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     .logo {
       position:absolute;
-      top:0.625rem;
-      left:1.375rem;
-      width:2.375rem
+      top:0.75rem;
+      left:.75rem;
+      width:2.25rem
     }
     .name {
       float:left;
@@ -65,15 +65,11 @@
       float:left;
       margin-left:.0625rem;
       font-size:.9375rem;
-      line-height:1.3125rem;
+      line-height:1.3875rem;
     }
   }
   .contact {
-    flex:1;
-    display:flex;
-    flex-direction:column;
     padding-top:.375rem;
-    //padding-left:1.3875rem;
     .section-header {
       line-height:2.25rem;
       font-size:1.5rem;
@@ -81,7 +77,8 @@
     }
     a {
       position:relative;
-      padding-left:4.625rem;
+      float:left;
+      padding-left:3.875rem;
       padding-bottom:.625rem;
       line-height:2.625rem;
       font-size:1.25rem;
@@ -100,9 +97,19 @@
       &:before {
         position:absolute;
         top:.25rem;
-        left:1.3125rem;
+        left:.625rem;
         font-size:2.625rem;
       }
     }
+  }
+  .skills, .tools, .languages {
+    float:left;
+    padding: 0 .625rem 1.1875rem;
+    border-bottom:1px solid rgba(0,0,0,.2);
+    &.skills { display:flex; flex-direction:column; overflow:auto; }
+    &.tools, &.languages { position:relative; float:left; padding: .5rem .3875rem .75rem }
+    &::-webkit-scrollbar { display: none }
+    @import 'Skill/_';
+    @import 'Tool/_';
   }
 }

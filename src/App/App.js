@@ -52,7 +52,7 @@ const App = React.createClass({
 		switch( location.pathname ){
 			// VALID PATHS
 			case '/':
-			// TODO: MAKE THIS INTELLIGENT
+			// TODO: FIX THIS EMBARASSMENT
 			case '/project/0':
 			case '/project/1':
 			case '/project/2':
@@ -75,19 +75,21 @@ const App = React.createClass({
 		// Determine if routes are valid, pass error information to server via staticContext object
     if ( staticContext ) this.assignStaticContext()
 
-		if ( isMobile ){
-      return (
-        <div id="MobileApp">THIS IS A MOBILE APP</div>
-      );
-    } else {
-      return (
-        <div id="App">
-					<Route path="/project/:project_id" component={FullPage} />
-					<Route path="/" component={Sidebar} />
-					<Route path="/" component={Canvas} />
-				</div>
-      );
-    }
+
+		// TODO: DEVELOP MOBILE VERSION
+		// if ( isMobile ){
+    //   return (
+    //     <div id="MobileApp"></div>
+    //   );
+    // } else {
+		return (
+			<div id="App">
+				<Route path="/project/:project_id" component={FullPage} />
+				<Route path="/" component={Sidebar} />
+				<Route path="/" component={Canvas} />
+			</div>
+		);
+    // }
   }
 });
 

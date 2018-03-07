@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
+import Skill from './Skill/Skill'
+import Tool from './Tool/Tool'
 
 const Sidebar = React.createClass({
 
@@ -10,6 +12,69 @@ const Sidebar = React.createClass({
 
 	render() {
 		const { location, match } = this.props;
+
+		const skills = [
+			{
+				name:'Frontend Development',
+				percentFilled:95
+			},
+			{
+				name:'Graphic Design',
+				percentFilled:88
+			},
+			{
+				name:'UX/UI',
+				percentFilled:86
+			},
+
+			{
+				name:'Backend Development',
+				percentFilled:76
+			},
+			{
+				name:'Database Management',
+				percentFilled:70
+			},
+			{
+				name:'DevOps',
+				percentFilled:54
+			},
+		];
+
+		const tools = ['React','Node','AWS','PostgreSQL','Webpack','Docker'];
+		const languages = ['Javascript','SQL','CSS','Ruby','PHP','Go'];
+
+		const toolList = [];
+		_.each( tools, ( tool, i ) => {
+			toolList.push(
+				<Tool
+					key={ tool.name }
+					name={ tool }
+				/>
+			)
+		})
+
+		const languageList = [];
+		_.each( languages, ( tool, i ) => {
+			languageList.push(
+				<Tool
+					key={ tool.name }
+					name={ tool }
+				/>
+			)
+		})
+
+		const skillList = [];
+		_.each( skills, ( skill, i ) => {
+			skillList.push(
+				<Skill
+					key={ skill.name }
+					position={ i }
+					{ ...skill }
+				/>
+			)
+		})
+
 		return (
 			<div id="Sidebar">
 				<div className="header">
@@ -21,7 +86,7 @@ const Sidebar = React.createClass({
 						Lucas Lemos
 					</div>
 					<div className="description">
-						Full-stack designer. Forever chasing software mastery. 10,000 hours and counting.
+						Full-stack developer. Opinion-haver. Mastery junkie. Truth-seeker.
 					</div>
 				</div>
 				<div className="university">
@@ -30,10 +95,16 @@ const Sidebar = React.createClass({
 					<div className="focus">Finance  .  Math</div>
 				</div>
 				<div className="contact">
-					{/*<a href="#" className="icon-twitter">_soupkal</a>*/}
 					<a href="https://www.github.com/soupchicken" className="icon-github">soupchicken</a>
-					{/*<a href="#" className="icon-facebook">/llemos</a>*/}
-
+				</div>
+				<div className="skills">
+					{ skillList }
+				</div>
+				<div className="languages">
+					{ languageList }
+				</div>
+				<div className="tools">
+					{ toolList }
 				</div>
 			</div>
 		);

@@ -197,6 +197,9 @@ export default [
 	{
 		title:"PunchMe",
 		overview:"Product Manager @ Loyalty Rewards Platform Startup",
+		links:[{
+			display_text:'Eric Karbeling', url:'https://www.erickarbeling.com/'
+		}],
 		pages:[
 			{
 				title:'Overview',
@@ -228,6 +231,9 @@ export default [
 	{
 		title:"Pakkd",
 		overview:"A Facebook app that shows its users a directory of events in their school network",
+		links:[
+			{ display_text:'Manu\'s LinkedIn', url:'https://www.linkedin.com/in/manu-bhat-7663b23a/'}
+		],
 		pages:[
 			{
 				title:'Humble Beginnings',

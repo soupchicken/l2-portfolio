@@ -87,7 +87,7 @@ const Sidebar = React.createClass({
 						Lucas Lemos
 					</div>
 					<div className="description">
-						Full-stack developer. Opinion-haver. Mastery junkie. Truth-seeker.
+						Full-stack developer. Mastery junkie. Truth-seeker.
 					</div>
 				</div>
 				<div className="university">

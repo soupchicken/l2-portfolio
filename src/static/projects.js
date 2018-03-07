@@ -207,9 +207,9 @@ export default [
 			},
 			{
 				title:'The Cards',
-				image:'/images/punchme-ios-events.png',
-				description:'Users could grab a card at any participating retailer and immediately register it on the tablet app and start' +
-										'earning rewards.'
+				image:'/images/punchme-cards.png',
+				description:'Users could grab a card at any participating retailer and immediately register it on the tablet app and start ' +
+										'earning rewards. Vendors also had their own set of cards users could scan when a tablet was unavailable.'
 			},
 			{
 				title:'Mobile App',

@@ -3,12 +3,13 @@
   flex-direction:column;
   float:left;
   width:100%;
-  padding: 1.0625rem .5625rem .625rem .875rem;
+  padding: 1.0625rem 0 .625rem .875rem;
   //margin-top:.125rem;
   border-bottom:1px solid rgba(0,0,0,.375);
   &:last-of-type { margin-bottom:50%; }
   &:first-of-type { margin-top:0 }
   &[data-project-focused="true"]{
+
     .pages {
       overflow:hidden;
       min-height:38rem;

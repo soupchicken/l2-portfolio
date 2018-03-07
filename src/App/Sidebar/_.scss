@@ -25,12 +25,12 @@
     }
     .name {
       position:absolute;
-      top:8.25rem;
+      top:8.3125rem;
       left:0;
       width:100%;
       font-family:'Slabo 27px', serif;
       text-align:center;
-      font-size:2.0625rem;
+      font-size:1.9375rem;
       font-weight:800;
     }
     .description {
@@ -58,7 +58,7 @@
     .name {
       float:left;
       margin-top:.625rem;
-      font-size:1.3125rem;
+      font-size:1.25rem;
       font-weight:600;
     }
     .focus {
@@ -107,7 +107,7 @@
     padding: 0 .625rem 1.1875rem;
     border-bottom:1px solid rgba(0,0,0,.2);
     &.skills { display:flex; flex-direction:column; overflow:auto; }
-    &.tools, &.languages { position:relative; float:left; padding: .5rem .3875rem .75rem }
+    &.tools, &.languages { position:relative; float:left; padding: .375rem .3875rem .625rem }
     &::-webkit-scrollbar { display: none }
     @import 'Skill/_';
     @import 'Tool/_';

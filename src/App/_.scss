@@ -27,18 +27,18 @@ html, body, #App, #MobileApp {
 }
 
 @media screen
-and (min-width: 1435px)
-and (max-width: 1668px){
+and (min-width: 1500px)
+and (max-width: 1720px){
   html, body, #App, #Autokal { font-size: 15px }
 }
 @media screen
-and (min-width: 1250px)
-and (max-width: 1435px){
+and (min-width: 1320px)
+and (max-width: 1500px){
   html, body, #App, #Autokal { font-size: 14px }
 }
 
 @media screen
 and (min-width: 0)
-and (max-width: 1250px){
+and (max-width: 1320px){
   html, body, #App, #Autokal { font-size: 13px }
 }

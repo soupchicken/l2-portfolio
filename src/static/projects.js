@@ -70,7 +70,7 @@ export default [
 			{
 				title:'TWI & Autokal',
 				tags:['design'],
-				image:'/images/twi-melee.png',
+				image:'/images/twi-autokal.png',
 				description:'TWI was where I experimented with new layouts for Autokal. It allowed me to iterate rapidly as ' +
 										'designing a new layout by hand is many times easier than coding one in. Also, our newsletter audiences ' +
 										'were regularly in the 10s of thousands - a good sample size. '
@@ -85,7 +85,7 @@ export default [
 			{
 				title:'Design Evolution',
 				tags:['design'],
-				image:'/images/twi-melee.png',
+				image:'/images/twi-evolution.png',
 				description:'I tightened up the design over time as I noticed earlier versions were too large for some screens. ' +
 										'It also made it easier to write the software templates that would eventually become the current version of Autokal.'
 			},
@@ -139,7 +139,7 @@ export default [
 			{
 				title:'Overview',
 				tags:['design','react','frontend','backend'],
-				image:'/images/ak-v3-autokal.png',
+				image:'/images/ak-v3-board.png',
 				description:'My second React app and first foray into building a proper API. Frontend was all me, worked with a Juan ' +
 										'Cancela on the backend (github link above). It was feature rich, but never attracted many users before we scrapped it.'
 			},
@@ -151,9 +151,9 @@ export default [
 										'where they could list all their upcoming and past events as well as whatever media they chose to showcase.'
 			},
 			{
-				title:'Backend & DevOps',
-				tags:['backend'],
-				image:'/images/ak-v3-early.png',
+				title:'Forms',
+				tags:['frontend','design','react'],
+				image:'/images/ak-v3-event-form.png',
 				description:'V3 was my first app deployed onto AWS. And my first experience developing a proper self-documenting HAL REST API. ' +
 										'Like V2, I used NodeJS to serve the app. However, I did change from from MongoDB to PostgreSQL for obvious reasons ' +
 										'(i.e. MongoDB is a mess).'
@@ -163,32 +163,42 @@ export default [
 	{
 		title:"Autokal - V2",
 		overview:"History of the Autokal project",
+		tags:['frontend','design','react'],
 		pages:[
 			{
 				title:'Overview',
+				tags:['frontend','design','react'],
 				image:'/images/ak-v2.png',
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
 			},
 			{
-				title:'Mobile Designs',
+				title:'Mobile - Events',
+				tags:['design'],
 				image:'/images/ak-v2-mobile-events.png',
+				description:'Designs for a mobile app companion to version 2 that was never built'
+			},
+			{
+				title:'Mobile - Friends',
+				tags:['design'],
+				image:'/images/ak-v2-mobile-friends.png',
 				description:'Designs for a mobile app companion to version 2 that was never built'
 			}
 		]
 	},
 	{
 		title:"Autokal - V1",
+		tags:['frontend','design'],
 		overview:"History of the Autokal project",
 		pages:[
 			{
-				id:15,
 				title:'Overview',
+				tags:['frontend','design'],
 				image:'/images/ak-v1.png',
 				description:'My first real attempt at building Autokal. Never even saw a user as I scrapped it in dissatisfaction'
 			},
 			{
-				id:15,
-				title:'V1 - Takeaways',
+				title:'Organizers',
+				tags:['frontend','design'],
 				image:'/images/ak-v1-profiles.png',
 				description:'Album art for Kiiyo\'s first release. Hand-designed font.'
 			}
@@ -203,7 +213,7 @@ export default [
 		pages:[
 			{
 				title:'Overview',
-				image:'/images/punchme-ios-events.png',
+				image:'/images/punchme-overview.png',
 				description:'I was the product manager of a multi-platform loyalty application. ' +
 										'I led a team of 8 outsourced developers and a single in-house graphic designer. ' +
 										'Built using Rails, Java and ObjectiveC backed by a PostgreSQL database.'

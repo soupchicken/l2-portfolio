@@ -137,6 +137,40 @@ export default [
 		]
 	},
 	{
+		title:"Autokal - V3",
+		tags:['design','react','frontend','backend'],
+		links:[
+			{ display_text:'Juan\'s Github', url:'https://github.com/juancancela' }
+		],
+		overview:"3rd version of Autokal and 2nd React App. First production-quality API and foray into DevOps.",
+		pages:[
+			{
+				title:'Overview',
+				tags:['design','react','frontend','backend'],
+				image:'/images/ak-v3-board.png',
+				description:'I designed and coded the frontend. I worked with Juan ' +
+				'Cancela on the backend (github link above). The app was feature rich, but never attracted many users. We scrapped ' +
+				'the frontend and retooled the backend for the newest version of Autokal'
+			},
+			{
+				title:'Organizer Profiles',
+				tags:['design','react','frontend'],
+				image:'/images/ak-v3-autokal.png',
+				description:'Organizers had profile pages that users could subscribe to ' +
+				'where they could list all their upcoming and past events, clips/videos they chose to showcase ' +
+				'and contact information.'
+			},
+			{
+				title:'Forms',
+				tags:['frontend','design','react'],
+				image:'/images/ak-v3-event-form.png',
+				description:'Event fields like "participants" forced the creation of custom react inputs. ' +
+				'These components were generalized into an input library ' +
+				'I continued to use on v4'
+			}
+		]
+	},
+	{
 		title:"Miscellaneous",
 		overview:"Assorted work",
 		tags:['design','react','frontend'],
@@ -162,40 +196,6 @@ export default [
 				tags:['design'],
 				image:'/images/intergalactic.png',
 				description:'Album art for Kiiyo\'s first release. Keywords: space-y, tribal.'
-			}
-		]
-	},
-	{
-		title:"Autokal - V3",
-		tags:['design','react','frontend','backend'],
-		links:[
-			{ display_text:'Juan\'s Github', url:'https://github.com/juancancela' }
-		],
-		overview:"3rd version of Autokal and 2nd React App. First production-quality API and foray into DevOps.",
-		pages:[
-			{
-				title:'Overview',
-				tags:['design','react','frontend','backend'],
-				image:'/images/ak-v3-board.png',
-				description:'I designed and coded the frontend. I worked with Juan ' +
-										'Cancela on the backend (github link above). The app was feature rich, but never attracted many users. We scrapped ' +
-										'the frontend and retooled the backend for the newest version of Autokal'
-			},
-			{
-				title:'Organizer Profiles',
-				tags:['design','react','frontend'],
-				image:'/images/ak-v3-autokal.png',
-				description:'Organizers had profile pages that users could subscribe to ' +
-										'where they could list all their upcoming and past events, clips/videos they chose to showcase ' +
-										'and contact information.'
-			},
-			{
-				title:'Forms',
-				tags:['frontend','design','react'],
-				image:'/images/ak-v3-event-form.png',
-				description:'Event fields like "participants" forced the creation of custom react inputs. ' +
-										'These components were generalized into an input library ' +
-										'I continued to use on v4'
 			}
 		]
 	},

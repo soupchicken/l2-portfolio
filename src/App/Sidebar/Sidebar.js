@@ -17,24 +17,27 @@ const Sidebar = React.createClass({
 		const skills = [
 			{
 				name:'Frontend Development',
-				percentFilled:95
-			},
-			{
-				name:'Graphic Design',
-				percentFilled:88
+				percentFilled:93
 			},
 			{
 				name:'UX/UI',
-				percentFilled:86
+				percentFilled:88
 			},
-
+			{
+				name:'Graphic Design',
+				percentFilled:82
+			},
+			{
+				name:'Project Management',
+				percentFilled:73
+			},
 			{
 				name:'Backend Development',
-				percentFilled:76
+				percentFilled:69
 			},
 			{
 				name:'Database Management',
-				percentFilled:70
+				percentFilled:64
 			},
 			{
 				name:'DevOps',

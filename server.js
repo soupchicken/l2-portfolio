@@ -103,6 +103,7 @@ app.listen( port, ( error ) => {
 });
 
 http.createServer(function (req, res) {
+  console.log("WHAT THE FUCK")
   res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
   res.end();
 }).listen( redirectPort );

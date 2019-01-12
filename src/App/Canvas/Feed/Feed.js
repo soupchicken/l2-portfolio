@@ -89,6 +89,15 @@ const Feed = React.createClass({
 								}}>
 								React
 							</div>
+							<div
+								className="tag"
+								data-active={ query.filter && query.filter === 'blockchain' }
+								onClick={() => {
+									query.filter || query.filter !== 'blockchain' ?
+										this.activateFilter('blockchain') : this.clearFilter()
+								}}>
+								Blockchain
+							</div>
 						</div>
 					</div>
 				</div>

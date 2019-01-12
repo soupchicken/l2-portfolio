@@ -1,7 +1,59 @@
 export default [
 	{
+		title:"SpiritOS - A Better Way to be Together",
+		overview:"A DAO platform that empowers communities with blockchain-enabled tools that help them to harness and focus their collective power to create new and improved ways of being together",
+		tags:['design','frontend','react','blockchain'],
+		links:[
+			{ display_text:'Whitepaper Part I', url:'/images/spiritos-whitepaper-part1.pdf' }
+		],
+		pages:[
+			{
+				title:'Overview',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-cover.png',
+				description:'SpiritOS is a platform for creating and managing community-centric DAOs and an operating system for the applications that power them'
+			},
+			{
+				title:'LOVE',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-love.png',
+				description:'SpiritOS is powered by LOVE, a cryptocurrency that re-aligns the incentives that guide our behavior to be more in line with what we really need as a people'
+			},
+			{
+				title:'Governance',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-governance.png',
+				description:'Communities on SpiritOS have complete control over what they do together'
+			},
+			{
+				title:'Tools',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-tools.png',
+				description:'SpiritOS augments the software patterns you\'re familiar with smart contracts that incentivize community action'
+			},
+			{
+				title:'Heroes',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-heroes.png',
+				description:'SpiritOS makes it easy to identify and support those who add value to your community'
+			},
+			{
+				title:'Projects',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-projects.png',
+				description:'Smart contracts make it possible for us to create, own and manage assets as a collective'
+			},
+			{
+				title:'Roadmap',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-roadmap.png',
+				description:'SpiritOS will be developed in tandem with the communities we work with in 2019'
+			}
+		]
+	},
+	{
 		title:"Autokal - eSports simplified",
-		overview:"\"eSports\" events app. Helps its users keep tabs on what's happening in their favorite games.",
+		overview:"An eSports events app. Helped its users keep tabs on what's happening in their favorite games.",
 		tags:['design','frontend','react','backend','mobile'],
 		links:[],
 		pages:[
@@ -9,47 +61,46 @@ export default [
 				title:'Overview',
 				tags:['design','frontend','react','backend','mobile'],
 				image:'/images/ak-overview.png',
-				description:'Autokal pulls in ~2k users weekly ' +
-										'with detailed event information and a directory of past event replays. Autokal covers 7 games and counting. ' +
-										'New version currently under development'
+				description:'At its peak, Autokal pulled in ~2k users weekly ' +
+										'with detailed event information and a directory of past event replays. Autokal covered 7 games before being discontinued in 2018.'
 			},
 			{
 				title:'On Desktop',
 				tags:['design','frontend','react'],
 				image:'/images/ak-desktop.png',
-				description: 'Autokal is the perfect tool for keeping tabs on ongoing tournaments. Users stop by for detailed event ' +
+				description: 'Autokal was the perfect tool for keeping tabs on ongoing tournaments. Users stopped by for detailed event ' +
 										 'info, links to brackets and other info, viewer counts and stream thumbnails. ' +
-										 'Or, if nothing is live, they can always browse replays from prior week\'s events. '
+										 'Or, if nothing was live, they could always browse replays from prior week\'s events. '
 			},
 			{
 				title:'Mobile - Events',
 				tags:['design','frontend','react','mobile'],
 				image:'/images/ak-mobile-events.png',
-				description:'Not at your computer? Browse events through our mobile site.'
+				description:'Not at your computer? Users could browse events through our mobile site.'
 			},
 			{
 				title:'Mobile - VODs',
 				tags:['design','frontend','react','mobile'],
 				image:'/images/ak-mobile-vods.png',
-				description:'Miss last week\'s events? Check out the most watched sets or experience the top 8 the way it was ' +
+				description:'Missed last week\'s events? Users could use our VOD section to check out the most watched sets or experience the tournament the way it was ' +
 										'meant to be watched, chronologically. Our spoiler tags' +
-										' keep important results hidden.'
+										' kept important results hidden.'
 			},
 			{
 				title:'Forms',
 				tags:['design','frontend','react'],
 				image:'/images/ak-forms.png',
-				description:'Built with my own personal library of custom react inputs, these forms make it possible to ' +
+				description:'Built with my own personal library of custom react inputs, these forms made it possible to ' +
 										'easily maintain events on Autokal.'
 			},
 			{
 				title:'Backend',
 				tags:['backend'],
 				image:'/images/backend-devops.png',
-				description:'Autokal is deployed on AWS. ' +
-										'There\'s a webapp, an API gateway for authentication, the API itself and an image-processing ' +
+				description:'Autokal was deployed on AWS. ' +
+										'It consisted of a webapp, an API gateway for authentication, the API itself and an image-processing ' +
 										'worker for cutting up and uploading images to S3. ' +
-										'Each app is built with nodeJS. API uses HAL format. PostgreSQL database.'
+										'Each app was built with nodeJS. API uses HAL format. PostgreSQL database.'
 			},
 		]
 	},
@@ -128,9 +179,7 @@ export default [
 				title:'Other games',
 				tags:['design'],
 				image:'/images/twi-other-games.png',
-				description:'We\'ve already published infographics for Starcraft and CSGO. While they were received ' +
-										'well, it was too much effort to do them every week without templates. ' +
-										'We will add these games and more once Autokal returns.'
+				description:'We also branched out to a couple of other games, publishing infographics for Starcraft and CSGO - though these series were short-lived despite positive reception'
 			}
 		]
 	},
@@ -146,9 +195,8 @@ export default [
 				title:'Overview',
 				tags:['design','react','frontend','backend'],
 				image:'/images/ak-v3-board.png',
-				description:'I designed and coded the frontend. I worked with Juan ' +
-				'Cancela on the backend (github link above). The app was feature rich, but never attracted many users. We scrapped ' +
-				'the frontend and retooled the backend for the newest version of Autokal'
+				description:'I designed and developed the frontend solo, and hired talented developer Juan ' +
+				'Cancela to help with the backend (github link above).'
 			},
 			{
 				title:'Organizer Profiles',
@@ -173,8 +221,7 @@ export default [
 		overview:"Assorted work",
 		tags:['design','react','frontend'],
 		links:[
-			{ display_text:'Portfolio Code', url:'https://github.com/soupchicken/l2-portfolio' },
-			{ display_text:'Kiiyo Soundcloud', url:'https://soundcloud.com/kiiyomusic' }
+			{ display_text:'Portfolio Code', url:'https://github.com/soupchicken/l2-portfolio' }
 		],
 		pages:[
 			{
@@ -206,10 +253,8 @@ export default [
 				title:'Overview',
 				tags:['frontend','design','react'],
 				image:'/images/ak-v2.png',
-				description:'While the frontend code was passable React, the backend was a mess. ' +
-										'We suffered from the chicken and the egg problem and a confusing UX/UI ' +
-										'that tried to do too much. ' +
-										'That said it was a solid learning experience.'
+				description:'Another attempt at creating a subscription-based event service. ' +
+										'A solid learning experience.'
 			},
 			{
 				title:'Mobile - Events',
@@ -221,7 +266,7 @@ export default [
 				title:'Mobile - Friends',
 				tags:['design'],
 				image:'/images/ak-v2-mobile-friends.png',
-				description:'More designs demonstrating how we would implement our "friends" ' +
+				description:'Assorted designs demonstrating how we would implement our "friends" ' +
 										'functionality. Users would be able to broadcast which events they were ' +
 										'attending to their friends list.'
 			}
@@ -236,9 +281,7 @@ export default [
 				title:'Overview',
 				tags:['frontend','design'],
 				image:'/images/ak-v1.png',
-				description:'My first attempt at a proper javascript frontend using BackboneJS for its router, views and dispatcher. ' +
-										'I leaned on Ruby on Rails for the backend - hiding away most of the complexity from my novice mind. ' +
-										'I never promoted it as I was not comfortable with its level of quality.'
+				description:'My first attempt at a proper javascript frontend using BackboneJS for its router, views and dispatcher and Ruby on Rails for the backend. '
 			},
 			{
 				title:'Organizers',
@@ -250,7 +293,7 @@ export default [
 	},
 	{
 		title:"Pakkd - Facebook Event Aggregator",
-		overview:"A Facebook connect app that shows its users a directory of events in their school network",
+		overview:"A Facebook connect app that shoed its users a directory of events in their school network",
 		tags:['design', 'frontend'],
 		links:[
 			{ display_text:'Manu\'s LinkedIn', url:'https://www.linkedin.com/in/manu-bhat-7663b23a/'}
@@ -260,9 +303,8 @@ export default [
 				title:'Humble Beginnings',
 				tags:['design', 'frontend'],
 				image:'/images/pakkd.png',
-				description:'The first app I ever worked on. Coded in tandem with my college roommate Manu Bhat. We had a good 50+ ' +
-										'regular users who would visit daily for the comprehensive list of college campus events & parties ' +
-										'our app would aggregate. Not bad for a school of 10k. Unfortunately, Facebook changes to how they handled networks killed the app.'
+				description:'The first app I ever worked on. Coded in tandem with my college roommate Manu Bhat. At its peak we had a 100+ ' +
+										'regular users who would visit daily for the comprehensive list of college campus events & parties.'
 			},
 		]
 	},

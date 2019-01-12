@@ -24,12 +24,12 @@ const Sidebar = React.createClass({
 				percentFilled:88
 			},
 			{
-				name:'Graphic Design',
-				percentFilled:84
+				name:'Project Management',
+				percentFilled:86
 			},
 			{
-				name:'Project Management',
-				percentFilled:78
+				name:'Graphic Design',
+				percentFilled:82
 			},
 			{
 				name:'Backend Development',
@@ -40,12 +40,12 @@ const Sidebar = React.createClass({
 				percentFilled:69
 			},
 			{
-				name:'DevOps',
-				percentFilled:62
+				name:'Blockchain Development',
+				percentFilled:54
 			},
 		];
 
-		const tools = ['React','Node','AWS','GraphQL','PostgreSQL','Webpack','Docker'];
+		const tools = ['React','Node','AWS','GraphQL','PostgreSQL','Apollo','Docker'];
 		const languages = ['Javascript','Solidity','SQL','CSS','Typescript','Ruby','Java','Go'];
 
 		const toolList = [];

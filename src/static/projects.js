@@ -3,9 +3,7 @@ export default [
 		title:"Autokal - eSports simplified",
 		overview:"\"eSports\" events app. Helps its users keep tabs on what's happening in their favorite games.",
 		tags:['design','frontend','react','backend','mobile'],
-		links:[
-			{ display_text:'Demo' , url:'https://demo.autokal.com/' }
-		],
+		links:[],
 		pages:[
 			{
 				title:'Overview',

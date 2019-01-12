@@ -78,7 +78,7 @@ function renderFullPage(html, initialState ) {
       <head>
         <title>Lucas Lemos</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="L2 Boilerplate"/>
+        <meta name="description" content="Portfolio"/>
         <link rel="icon" type="img/ico" href="images/favicon.ico"/>
          <link href="https://file.myfontastic.com/S5Djnt87giP8msQyxwAYVP/icons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato|Abel|Slabo+27px" rel="stylesheet">

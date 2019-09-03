@@ -46,7 +46,7 @@ const Sidebar = React.createClass({
 		];
 
 		const tools = ['React','Node','AWS','GraphQL','PostgreSQL','Apollo','Docker'];
-		const languages = ['Javascript','Solidity','SQL','CSS','Typescript','Ruby','Java','Go'];
+		const languages = ['Javascript','Solidity','SQL','CSS','Typescript','Ruby','Go'];
 
 		const toolList = [];
 		_.each( tools, ( tool, i ) => {
@@ -90,7 +90,7 @@ const Sidebar = React.createClass({
 						Lucas Lemos
 					</div>
 					<div className="description">
-						Full-stack developer. Mastery junkie. Truth-seeker.
+						Full-stack blockchain developer. Truth-seeker.
 					</div>
 				</div>
 				<div className="university">

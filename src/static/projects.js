@@ -1,25 +1,64 @@
 export default [
 	{
 		title: "Flexconomy - Ethereum-Powered Sales Platform",
-		overview: "A Direct Sales DAO Protocol that makes it easy to run a global sales organization. Coming soon.",
+		overview: "A Direct Sales DAO Protocol that makes it easy to run a global sales organization. Concept, designs, copy, presentations and whitepaper created by me. App currently in development.",
 		tags: ['design', 'frontend', 'react', 'blockchain'],
 		links: [{
-			display_text:'Website', url:'http://www.flexconomy.io/'
+			display_text:'Presentation', url:'/images/flexconomy_presentation.pdf'
 		},{
-			display_text:'Whitepaper', url:'/images/spiritos-whitepaper-part1.pdf'
+			display_text:'Korea Pitch', url:'/images/flexconomy_korea_pitch.pdf'
+		},{
+			display_text:'Whitepaper', url:'/images/flexconomy_whitepaper.pdf'
 		}],
 		pages:[
 			{
 				title:'Overview',
-				tags:['design','frontend','react','blockchain'],
+				tags:['design','blockchain'],
 				image:'/images/flexconomy-overview.png',
-				description:''
+				description:'Flexconomy is a concept I developed in close cooperation w/ Singapore billionaire Chan Heng Fai\'s team.' +
+				' They\'re investing heavily into network marketing companies and are looking to develop a companion app that leverages the blockchain.'
+			},
+			{
+				title:'Value Proposition',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-value-proposition.png',
+				description:'Utilizing the Ethereum Network enables us to dramatically reduce overhead for global sales organizations.'
+			},
+			{
+				title:'Automation',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-operations.png',
+				description:'Smart contracts make it possible to automate huge portions of a sales organization\'s back office.'
+			},
+			{
+				title:'Global Reach',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-global.png',
+				description:'Flexconomy makes global expansion easy - local laws are encoded into smart contracts ensuring every transaction complies with local governments.'
+			},
+			{
+				title:'Banking Infrastructure',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-banking.png',
+				description:'Flexconomy DAOs to transact in whichever currencies they prefer thanks to our banking partners.'
+			},
+			{
+				title:'Interface',
+				tags:['design','react','frontend','blockchain'],
+				image:'/images/flexconomy-interface.png',
+				description:'I also was in charge of UX/UI designs, though I cannot show them all here.'
 			},
 			{
 				title:'Business Cards',
 				tags:['design','blockchain'],
 				image:'/images/flexconomy-business-cards.png',
-				description:'I did the design for the business cards'
+				description:'I designed our business cards'
+			},
+			{
+				title:'Logo',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-logo.png',
+				description:'I also created the Flexconomy logo.'
 			}
 		]
 	},
@@ -74,58 +113,6 @@ export default [
 				'worker for cutting up and uploading images to S3. ' +
 				'Each app was built with nodeJS. API uses HAL format. PostgreSQL database.'
 			},
-		]
-	},
-	{
-		title:"SpiritOS - A Better Way to be Together",
-		overview:"A DAO platform concept that empowers communities with blockchain-enabled tools that help them to harness and focus their collective power to create new and improved ways of being together",
-		tags:['design','frontend','react','blockchain'],
-		links:[
-			{ display_text:'Whitepaper Part I', url:'/images/spiritos-whitepaper-part1.pdf' }
-		],
-		pages:[
-			{
-				title:'Overview',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-cover.png',
-				description:'SpiritOS is a platform for creating and managing community-centric DAOs and an operating system for the applications that power them'
-			},
-			{
-				title:'LOVE',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-love.png',
-				description:'SpiritOS is powered by LOVE, a cryptocurrency that re-aligns the incentives that guide our behavior to be more in line with what we really need as a people'
-			},
-			{
-				title:'Governance',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-governance.png',
-				description:'Communities on SpiritOS have complete control over what they do together'
-			},
-			{
-				title:'Tools',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-tools.png',
-				description:'SpiritOS augments the software patterns you\'re familiar with smart contracts that incentivize community action'
-			},
-			{
-				title:'Heroes',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-heroes.png',
-				description:'SpiritOS makes it easy to identify and support those who add value to your community'
-			},
-			{
-				title:'Projects',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-projects.png',
-				description:'Smart contracts make it possible for us to create, own and manage assets as a collective'
-			},
-			{
-				title:'Roadmap',
-				tags:['design','frontend','react','blockchain'],
-				image:'/images/spiritos-roadmap.png',
-				description:'SpiritOS will be developed in tandem with the communities we work with in 2019'
-			}
 		]
 	},
 	{
@@ -208,6 +195,59 @@ export default [
 		]
 	},
 	{
+		title:"SpiritOS - A Better Way to be Together",
+		overview:"A DAO platform concept that empowers communities with blockchain-enabled tools that help them to harness and focus their collective power to create new and improved ways of being together. " +
+						 "Currently on the back-burner.",
+		tags:['design','frontend','react','blockchain'],
+		links:[
+			{ display_text:'Whitepaper Part I', url:'/images/spiritos-whitepaper-part1.pdf' }
+		],
+		pages:[
+			{
+				title:'Overview',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-cover.png',
+				description:'SpiritOS is a platform for creating and managing community-centric DAOs and an operating system for the applications that power them'
+			},
+			{
+				title:'LOVE',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-love.png',
+				description:'SpiritOS is powered by LOVE, a cryptocurrency that re-aligns the incentives that guide our behavior to be more in line with what we really need as a people'
+			},
+			{
+				title:'Governance',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-governance.png',
+				description:'Communities on SpiritOS have complete control over what they do together'
+			},
+			{
+				title:'Tools',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-tools.png',
+				description:'SpiritOS augments the software patterns you\'re familiar with smart contracts that incentivize community action'
+			},
+			{
+				title:'Heroes',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-heroes.png',
+				description:'SpiritOS makes it easy to identify and support those who add value to your community'
+			},
+			{
+				title:'Projects',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-projects.png',
+				description:'Smart contracts make it possible for us to create, own and manage assets as a collective'
+			},
+			{
+				title:'Roadmap',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/spiritos-roadmap.png',
+				description:'SpiritOS will be developed in tandem with the communities we work with in 2019'
+			}
+		]
+	},
+	{
 		title:"Autokal - V3",
 		tags:['design','react','frontend','backend'],
 		links:[
@@ -258,7 +298,7 @@ export default [
 				title:'Kiiyo Logo Design',
 				tags:['design'],
 				image:'/images/kiiyo-logo.png',
-				description:'Logo for LA electronic artist Kiiyo. Soundcloud link above.'
+				description:'Logo for LA electronic artist Kiiyo.'
 			},
 			{
 				title:'Intergalactic EP Cover',
@@ -317,7 +357,7 @@ export default [
 	},
 	{
 		title:"Pakkd - Facebook Event Aggregator",
-		overview:"A Facebook connect app that shoed its users a directory of events in their school network",
+		overview:"A Facebook connect app that provide users with a directory of events in their school network",
 		tags:['design', 'frontend'],
 		links:[
 			{ display_text:'Manu\'s LinkedIn', url:'https://www.linkedin.com/in/manu-bhat-7663b23a/'}

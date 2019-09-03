@@ -1,7 +1,84 @@
 export default [
 	{
+		title: "Flexconomy - Ethereum-Powered Sales Platform",
+		overview: "A Direct Sales DAO Protocol that makes it easy to run a global sales organization. Coming soon.",
+		tags: ['design', 'frontend', 'react', 'blockchain'],
+		links: [{
+			display_text:'Website', url:'http://www.flexconomy.io/'
+		},{
+			display_text:'Whitepaper', url:'/images/spiritos-whitepaper-part1.pdf'
+		}],
+		pages:[
+			{
+				title:'Overview',
+				tags:['design','frontend','react','blockchain'],
+				image:'/images/flexconomy-overview.png',
+				description:''
+			},
+			{
+				title:'Business Cards',
+				tags:['design','blockchain'],
+				image:'/images/flexconomy-business-cards.png',
+				description:'I did the design for the business cards'
+			}
+		]
+	},
+	{
+		title:"Autokal - eSports simplified",
+		overview:"An eSports events app. Helped its users keep tabs on what's happening in their favorite games.",
+		tags:['design','frontend','react','backend','mobile'],
+		links:[],
+		pages:[
+			{
+				title:'Overview',
+				tags:['design','frontend','react','backend','mobile'],
+				image:'/images/ak-overview.png',
+				description:'At its peak, Autokal pulled in ~2k users weekly ' +
+				'with detailed event information and a directory of past event replays. Autokal covered 7 games before being discontinued in 2018.'
+			},
+			{
+				title:'On Desktop',
+				tags:['design','frontend','react'],
+				image:'/images/ak-desktop.png',
+				description: 'Autokal was the perfect tool for keeping tabs on ongoing tournaments. Users stopped by for detailed event ' +
+				'info, links to brackets and other info, viewer counts and stream thumbnails. ' +
+				'Or, if nothing was live, they could always browse replays from prior week\'s events. '
+			},
+			{
+				title:'Mobile - Events',
+				tags:['design','frontend','react','mobile'],
+				image:'/images/ak-mobile-events.png',
+				description:'Not at your computer? Users could browse events through our mobile site.'
+			},
+			{
+				title:'Mobile - VODs',
+				tags:['design','frontend','react','mobile'],
+				image:'/images/ak-mobile-vods.png',
+				description:'Missed last week\'s events? Users could use our VOD section to check out the most watched sets or experience the tournament the way it was ' +
+				'meant to be watched, chronologically. Our spoiler tags' +
+				' kept important results hidden.'
+			},
+			{
+				title:'Forms',
+				tags:['design','frontend','react'],
+				image:'/images/ak-forms.png',
+				description:'Built with my own personal library of custom react inputs, these forms made it possible to ' +
+				'easily maintain events on Autokal.'
+			},
+			{
+				title:'Backend',
+				tags:['backend'],
+				image:'/images/backend-devops.png',
+				description:'Autokal was deployed on AWS. ' +
+				'It consisted of a webapp, an API gateway for authentication, the API itself and an image-processing ' +
+				'worker for cutting up and uploading images to S3. ' +
+				'Each app was built with nodeJS. API uses HAL format. PostgreSQL database.'
+			},
+		]
+	},
+	{
 		title:"SpiritOS - A Better Way to be Together",
-		overview:"A DAO platform that empowers communities with blockchain-enabled tools that help them to harness and focus their collective power to create new and improved ways of being together",
+		overview:"A DAO platform concept that empowers communities with blockchain-enabled tools that help them to harness and focus their collective power to create new and improved ways of being together",
 		tags:['design','frontend','react','blockchain'],
 		links:[
 			{ display_text:'Whitepaper Part I', url:'/images/spiritos-whitepaper-part1.pdf' }
@@ -49,59 +126,6 @@ export default [
 				image:'/images/spiritos-roadmap.png',
 				description:'SpiritOS will be developed in tandem with the communities we work with in 2019'
 			}
-		]
-	},
-	{
-		title:"Autokal - eSports simplified",
-		overview:"An eSports events app. Helped its users keep tabs on what's happening in their favorite games.",
-		tags:['design','frontend','react','backend','mobile'],
-		links:[],
-		pages:[
-			{
-				title:'Overview',
-				tags:['design','frontend','react','backend','mobile'],
-				image:'/images/ak-overview.png',
-				description:'At its peak, Autokal pulled in ~2k users weekly ' +
-										'with detailed event information and a directory of past event replays. Autokal covered 7 games before being discontinued in 2018.'
-			},
-			{
-				title:'On Desktop',
-				tags:['design','frontend','react'],
-				image:'/images/ak-desktop.png',
-				description: 'Autokal was the perfect tool for keeping tabs on ongoing tournaments. Users stopped by for detailed event ' +
-										 'info, links to brackets and other info, viewer counts and stream thumbnails. ' +
-										 'Or, if nothing was live, they could always browse replays from prior week\'s events. '
-			},
-			{
-				title:'Mobile - Events',
-				tags:['design','frontend','react','mobile'],
-				image:'/images/ak-mobile-events.png',
-				description:'Not at your computer? Users could browse events through our mobile site.'
-			},
-			{
-				title:'Mobile - VODs',
-				tags:['design','frontend','react','mobile'],
-				image:'/images/ak-mobile-vods.png',
-				description:'Missed last week\'s events? Users could use our VOD section to check out the most watched sets or experience the tournament the way it was ' +
-										'meant to be watched, chronologically. Our spoiler tags' +
-										' kept important results hidden.'
-			},
-			{
-				title:'Forms',
-				tags:['design','frontend','react'],
-				image:'/images/ak-forms.png',
-				description:'Built with my own personal library of custom react inputs, these forms made it possible to ' +
-										'easily maintain events on Autokal.'
-			},
-			{
-				title:'Backend',
-				tags:['backend'],
-				image:'/images/backend-devops.png',
-				description:'Autokal was deployed on AWS. ' +
-										'It consisted of a webapp, an API gateway for authentication, the API itself and an image-processing ' +
-										'worker for cutting up and uploading images to S3. ' +
-										'Each app was built with nodeJS. API uses HAL format. PostgreSQL database.'
-			},
 		]
 	},
 	{
